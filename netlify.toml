@@ -1,6 +1,6 @@
 # brodbandproductions.com: plain static site, no build step.
 [build]
-  publish = "."
+  publish = "public"
 
 # Old .html addresses redirect to the clean ones (/animated instead of /animated.html)
 [[redirects]]
