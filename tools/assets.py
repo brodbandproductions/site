@@ -65,7 +65,7 @@ M={
  '879c08232bfd3dd8d5ad57b4534787a9':('players/card2-threads.jpg','images/formulated/card-co-written-song.jpg'),
  'bd04e718480af49f03769616c9a08b68':('players/card3-phonograph.jpg','images/formulated/card-animated-video.jpg'),
  'c77ef405268706f9a383613ce30b12d5':('players/card4-lantern.jpg','images/formulated/card-live-session.jpg'),
- '522f67220086766039d3312f5138aef5':('players/card5-crucible-v2.jpg','images/formulated/card-release-ready.jpg'),
+ '6575b734ee2267be666cc029a53f75d8':('players/card5-crucible-v3.jpg','images/formulated/card-release-ready.jpg'),
  '3212aaac7f1d7abeb9f2349c5e4915b8':('players/card6-door.jpg','images/formulated/card-open-door.jpg'),
  '5abad6c63c2639e46ddbf25a3f85b974':('players/banner-ember-v2.jpg','images/formulated/banner-every-song.jpg'),
  'a5aa4dd01940f5449a32e0a24e4b9945':('audio/2026-10-11-steadfast-february.mp4','audio/2026-10-11-steadfast-february.m4a'),
