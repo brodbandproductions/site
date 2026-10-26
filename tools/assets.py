@@ -63,7 +63,7 @@ M={
  '9c8fa6a18cf9fc595d34a2bfffc32891':('players/bass3.jpg','images/players/brian-hutchison.jpg'),
  '4250c15923301c0c09142fe868c0269d':('players/card1-tree.jpg','images/formulated/card-full-arrangement.jpg'),
  '879c08232bfd3dd8d5ad57b4534787a9':('players/card2-threads.jpg','images/formulated/card-co-written-song.jpg'),
- '92f7e80c2ee3fba0910f5f91a8b1ee3c':('players/card3-filmstrip.jpg','images/formulated/card-animated-video-v2.jpg'),
+ 'bf0e0997b97c6c88e3d843be7d068400':('players/card3-filmstrip-crop.jpg','images/formulated/card-animated-video-v2.jpg'),
  'c77ef405268706f9a383613ce30b12d5':('players/card4-lantern.jpg','images/formulated/card-live-session.jpg'),
  '6575b734ee2267be666cc029a53f75d8':('players/card5-crucible-v3.jpg','images/formulated/card-release-ready-v2.jpg'),
  '3212aaac7f1d7abeb9f2349c5e4915b8':('players/card6-door.jpg','images/formulated/card-open-door.jpg'),
