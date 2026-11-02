@@ -26,3 +26,23 @@
   var again = thanks.querySelector('[data-again]');
   if (again) again.addEventListener('click', function () { thanks.hidden = true; form.hidden = false; });
 })();
+
+/* Product views: small thumbnails switch the main mock-up (front, sides, handle left or right). */
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll('.bb-views'), function (group) {
+    var card = group.closest('.bb-pc'); if (!card) return;
+    var main = card.querySelector('[data-zoom-src]');
+    var btns = group.querySelectorAll('.bb-vw');
+    Array.prototype.forEach.call(btns, function (b) {
+      b.addEventListener('click', function () {
+        var src = b.getAttribute('data-view-src');
+        main.style.backgroundImage = 'url(' + src + ')';
+        main.setAttribute('data-zoom-src', src);
+        var name = (main.getAttribute('aria-label') || '').split(' mock-up')[0];
+        main.setAttribute('aria-label', name + ' mock-up, ' + b.getAttribute('aria-label').toLowerCase());
+        main.setAttribute('data-zoom-alt', main.getAttribute('aria-label'));
+        Array.prototype.forEach.call(btns, function (o) { var on = o === b; o.classList.toggle('bb-vw-on', on); o.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      });
+    });
+  });
+})();

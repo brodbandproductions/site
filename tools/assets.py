@@ -7,6 +7,12 @@ from PIL import Image
 S=os.environ.get('BB_MEDIA','/tmp/claude-0/-home-claude/e8deede6-6d24-5a37-9461-1f7fdfa45203/scratchpad/')
 OUT=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'public')+'/'
 M={
+ '0b321091132500988e05d339decc227e':('merch/mug-handle-left.jpg','images/collected/mug-wrap-handle-left.jpg'),
+ 'ecb309a06104ebcaeefe27ea32624349':('merch/mug-handle-right.jpg','images/collected/mug-wrap-handle-right.jpg'),
+ '9cfd772e8416a324d94399adfd887fc0':('merch/dad-hat-side.jpg','images/collected/hat-dad-side.jpg'),
+ '72cc92a50fe74690f8c36cd90c300109':('merch/structured-cap-side.jpg','images/collected/hat-structured-cap-side.jpg'),
+ '3744cb0ff52b40f575d9d5e6983dc379':('merch/snapback-side.jpg','images/collected/hat-snapback-left.jpg'),
+ '0859aa42bb2384b2092c253ca5e3c757':('merch/snapback-side2.jpg','images/collected/hat-snapback-right.jpg'),
  '2b0af47d69d06122ae6c7ee679cb6a94':('merch/plate-gathering.jpg','images/collected/plate-the-gathering.jpg'),
  '65843b3ac3b090001ecad69a8fb4b704':('merch/plate-hive.jpg','images/collected/plate-the-celestial-hive.jpg'),
  'd4a5ba872b94e6a1d27e0b1325d01069':('merch/plate-alembic.jpg','images/collected/plate-the-alembic-of-the-stars.jpg'),
