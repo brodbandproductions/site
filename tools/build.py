@@ -22,6 +22,8 @@ PAGES = [
      'Music made, recorded and shared with artists and musicians: live performance, audio recording and video production by brodband productions.', None),
     ('About', 'formulated.html', '/formulated', 'Formulated', 'Formulated · brodband productions',
      'Bring an idea to brodband productions: songwriting and co-writing, full arrangements, recording and production, filmed live sessions and animated music videos.', 'formulated.js'),
+    ('Collected', 'collected.html', '/collected', 'Collected', 'Collected · The Formula collection · brodband productions',
+     'A preview of The Formula: engraved alchemical art plates by brodband, scored by Stellium Scale, on shirts, prints, hats and more. Choose your favourites.', 'collected.js'),
     ('Connect', 'connected.html', '/connected', 'Connected', 'Connected · brodband productions',
      'Get in touch with brodband productions about music projects, songwriting, arrangements, recording and video production.', 'connected.js'),
 ]
@@ -102,7 +104,7 @@ def build_page(dc, out, path, label, title, desc, pagejs, blobmap):
     v = vals_for(script)
     # force-render toggled blocks; scripts hide them again
     v['menuOpen'] = True
-    if dc == 'Connect':
+    if dc in ('Connect', 'Collected'):
         v['showForm'] = True; v['showThanks'] = True
     if dc == 'Loopers':
         v['noneShown'] = True
@@ -188,7 +190,21 @@ def post_loopers(p):
     assert p.count(a) == 1
     return p.replace(a, '<div data-log-empty hidden style="padding: 28px 0; color: #A9A6A6; border-bottom: 1px solid #3A3936">No trio')
 
-POST = {'Connect': post_connect, 'Loopers': post_loopers}
+def post_collected(p):
+    a = '<form class="bb-form" name="collected-interest">'
+    assert p.count(a) == 1
+    p = p.replace(a, '<form class="bb-form" name="collected-interest" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">\n'
+        '<input type="hidden" name="form-name" value="collected-interest">\n'
+        '<input type="hidden" name="plates" value="">\n<input type="hidden" name="products" value="">\n'
+        '<p class="bb-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>')
+    p = p.replace('<div role="status" style="border: 1.5px solid #F2EDE0;', '<div role="status" data-thanks hidden tabindex="-1" style="border: 1.5px solid #F2EDE0;')
+    p = p.replace('Your picks help decide what we make first. This is a preview of the confirmation; on the live site your answers are recorded.',
+                  'Your picks help decide what we make first.')
+    p = p.replace('<button type="button" class="bb-b3">Back to the form</button>', '<button type="button" class="bb-b3" data-again>Change my picks</button>')
+    p = p.replace('</style>', '.bb-hp{position:absolute;left:-9999px}\nform[hidden]{display:none !important}\n[data-thanks][hidden]{display:none !important}\n</style>', 1)
+    return p
+
+POST = {'Connect': post_connect, 'Loopers': post_loopers, 'Collected': post_collected}
 
 def extra_pages():
     base = open(OUT + 'connected.html').read()

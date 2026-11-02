@@ -7,6 +7,17 @@ from PIL import Image
 S=os.environ.get('BB_MEDIA','/tmp/claude-0/-home-claude/e8deede6-6d24-5a37-9461-1f7fdfa45203/scratchpad/')
 OUT=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'public')+'/'
 M={
+ '2b0af47d69d06122ae6c7ee679cb6a94':('merch/plate-gathering.jpg','images/collected/plate-the-gathering.jpg'),
+ '65843b3ac3b090001ecad69a8fb4b704':('merch/plate-hive.jpg','images/collected/plate-the-celestial-hive.jpg'),
+ 'd4a5ba872b94e6a1d27e0b1325d01069':('merch/plate-alembic.jpg','images/collected/plate-the-alembic-of-the-stars.jpg'),
+ '0440f6eba2c12d608955b6c0cfde3344':('merch/shirt-tree.jpg','images/collected/shirt-the-tree.jpg'),
+ 'ffcd7c30b8e9b14bf5248666e2a577f1':('merch/shirt-crucible.jpg','images/collected/shirt-the-crucible.jpg'),
+ '1055aad1ff775c82c68521c86ec732f3':('merch/shirt-spheres.jpg','images/collected/shirt-music-of-the-spheres.jpg'),
+ '6206f821c7fa74d57edd8896a52d2c1b':('merch/mug-wrap.jpg','images/collected/mug-wrap.jpg'),
+ '28cba3b25edccaeaf478b550293b77b0':('merch/dad-hat.jpg','images/collected/hat-dad.jpg'),
+ 'f176953e61c190bc73251e9141ee9bca':('merch/structured-cap.jpg','images/collected/hat-structured-cap.jpg'),
+ '040bcbbc380f28d17a4d4d191285381d':('merch/snapback.jpg','images/collected/hat-snapback.jpg'),
+ '312564c9283117c7991730fb3017ddca':('merch/beanie.jpg','images/collected/hat-beanie.jpg'),
  'b716536997e5d4001f1a70a11dbfab13':('moments/studio-moment-19.jpg','images/gallery/studio-moment-19.jpg'),
  '8157d163333f00884072107379db7499':('moments/studio-moment-20.jpg','images/gallery/studio-moment-20.jpg'),
  'bd5387cf427044ccdaecf6b910ec5874':('moments/studio-moment-01.jpg','images/gallery/studio-moment-01.jpg'),
