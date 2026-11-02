@@ -7,6 +7,10 @@ from PIL import Image
 S=os.environ.get('BB_MEDIA','/tmp/claude-0/-home-claude/e8deede6-6d24-5a37-9461-1f7fdfa45203/scratchpad/')
 OUT=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'public')+'/'
 M={
+ 'be3c4670bc115cd789a87be67c6ead24':('merch/band-hat-front.jpg','images/collected/hat-band-front.jpg'),
+ '88dd499b3546b6a125a17d2e25299eba':('merch/band-hat-left.jpg','images/collected/hat-band-front-left.jpg'),
+ '17f6a9ed03f4ab00546d3daac504c37e':('merch/band-hat-right.jpg','images/collected/hat-band-front-right.jpg'),
+ '0d9367c8b2c111b056af84766422fe14':('merch/band-hat-side.jpg','images/collected/hat-band-side.jpg'),
  'ded243cbad7cfdf24c13c330ab4ab965':('merch/emblem-hat-front.jpg','images/collected/hat-seal-front.jpg'),
  'bb275574c8009ce13ba4cae726911a47':('merch/emblem-hat-left.jpg','images/collected/hat-seal-front-left.jpg'),
  '0d7d5113c30887d908db965749d6fd24':('merch/emblem-hat-side.jpg','images/collected/hat-seal-side.jpg'),
