@@ -7,6 +7,12 @@ from PIL import Image
 S=os.environ.get('BB_MEDIA','/tmp/claude-0/-home-claude/e8deede6-6d24-5a37-9461-1f7fdfa45203/scratchpad/')
 OUT=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'public')+'/'
 M={
+ '48c214fc46204d626b8e0b2caf599d97':('merch/tee-tree-front.jpg','images/collected/tee-tree-front.jpg'),
+ 'e8f99448c1a42f22d93c6e3f29914630':('merch/tee-tree-side.jpg','images/collected/tee-tree-side.jpg'),
+ '2039934cea3b07e84c8164732b8dc4cc':('merch/tee-crucible-front.jpg','images/collected/tee-crucible-front.jpg'),
+ '575579d0f78a8676b29c3f35c3566a96':('merch/tee-crucible-side.jpg','images/collected/tee-crucible-side.jpg'),
+ 'eca2f974aafbf936e42b4c69c7c34991':('merch/tee-spheres-front.jpg','images/collected/tee-spheres-front.jpg'),
+ '2b1dbaf9dff4d21cf293c9c5a4b7d0f6':('merch/tee-spheres-side.jpg','images/collected/tee-spheres-side.jpg'),
  'e66118f805c37a3e00adface053dd335':('merch/journal-tree.jpg','images/collected/journal-tree.jpg'),
  '5c4fd79d271a7b866b47e02ad02e9e5d':('merch/journal-tree-held.jpg','images/collected/journal-tree-held.jpg'),
  '1bd2c18faca619d3204f6d87e36fefea':('merch/journal-crucible.jpg','images/collected/journal-crucible.jpg'),
