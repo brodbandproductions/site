@@ -92,6 +92,24 @@ M={
  'ff061075d60dacd9b15593deca31f276':('audio/2026-09-20-rare-walk.mp4','audio/2026-09-20-rare-walk.m4a'),
  '6fa493f5e60c23cb3975eb6b62237ab2':('audio/2026-09-06-handsomely.mp4','audio/2026-09-06-handsomely.m4a'),
 }
+# Plates (the engraved artwork) are published smaller, signed with a small wordmark
+# and tagged with copyright metadata. Print files never go on the website.
+PLATE_DIRS=('images/plates/','images/formulated/','images/collected/plate-')
+PLATE_MAX=1200
+NOTICE='(c) 2026 brodband productions. Original artwork; reproduction not permitted.'
+def _exif(im):
+    ex=im.getexif(); ex[0x8298]=NOTICE; ex[0x013B]='brodband productions'; ex[0x010E]='Original engraved plate by brodband productions'; return ex
+def _sign(im):
+    mark=Image.open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'signature-mark.png')).convert('RGBA')
+    w=max(60,round(im.width*0.055)); mark=mark.resize((w,round(mark.height*w/mark.width)),Image.LANCZOS)
+    a=mark.split()[3].point(lambda v:int(v*0.8)); mark.putalpha(a)
+    from PIL import ImageFilter
+    pad=round(im.width*0.018); base=im.convert('RGBA')
+    m=max(4,w//10); sh=Image.new('RGBA',(mark.width+2*m,mark.height+2*m),(0,0,0,0))
+    alpha=Image.new('L',sh.size,0); alpha.paste(mark.split()[3].point(lambda v:255 if v>0 else 0),(m,m))
+    alpha=alpha.filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.GaussianBlur(m*0.6)).point(lambda v:int(v*0.85))
+    sh.putalpha(alpha); x,y=im.width-w-pad,im.height-mark.height-pad
+    base.alpha_composite(sh,(x-m,y-m)); base.alpha_composite(mark,(x,y)); return base.convert('RGB')
 def copy_all():
     for bid,(src,dst) in M.items():
         o=OUT+dst; os.makedirs(os.path.dirname(o),exist_ok=True)
@@ -100,8 +118,11 @@ def copy_all():
             raise FileNotFoundError(src)
         if dst.endswith('.jpg'):
             im=Image.open(S+src).convert('RGB')
-            if im.width>1600: im=im.resize((1600,round(im.height*1600/im.width)),Image.LANCZOS)
-            im.save(o,quality=82,optimize=True,progressive=True)
+            plate=dst.startswith(PLATE_DIRS)
+            mx=PLATE_MAX if plate else 1600
+            if im.width>mx: im=im.resize((mx,round(im.height*mx/im.width)),Image.LANCZOS)
+            if plate: im=_sign(im)
+            im.save(o,quality=78 if plate else 82,optimize=True,progressive=True,exif=_exif(im))
         else:
             shutil.copyfile(S+src,o)
     return {k:'/'+v[1] for k,v in M.items()}
