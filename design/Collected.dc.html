@@ -205,7 +205,7 @@ html{scroll-behavior:smooth}
 <p class="bb-body">The plates on things made to last. Products marked planned are being sampled now; the others follow once we find the right makers.</p>
 </div>
 <ul class="bb-prods">
-<sc-for list="{{artItems}}" as="it" hint-placeholder-count="12">
+<sc-for list="{{artItems}}" as="it" hint-placeholder-count="14">
 <li class="bb-pc"><div class="{{it.imgCls}}" style="{{it.imgStyle}}" role="img" aria-label="{{it.imgAlt}}" data-zoom-src="{{it.zoom}}" data-zoom-alt="{{it.imgAlt}}"><span class="bb-mono">Mock-up to come</span><span>{{it.name}}</span></div><sc-if value="{{it.multi}}"><div class="bb-views" role="group" aria-label="{{it.name}} views"><sc-for list="{{it.views}}" as="v"><button type="button" class="bb-vw {{v.on}}" style="{{v.bg}}" data-view-src="{{v.src}}" aria-label="{{v.label}}" aria-pressed="{{v.pressed}}" title="{{v.label}}" onClick="{{v.pick}}"></button></sc-for></div></sc-if><div class="bb-pc-top"><span class="bb-mono bb-pl-no">{{it.kind}}</span><span class="bb-st {{it.stCls}}">{{it.status}}</span></div><span class="bb-pc-t">{{it.name}}</span><p class="bb-pc-d">{{it.desc}}</p><a href="#picks" class="bb-pc-a">{{it.cta}}</a></li>
 </sc-for>
 </ul>
@@ -246,7 +246,7 @@ html{scroll-behavior:smooth}
 </div></fieldset>
 <fieldset class="bb-fs"><legend>Products you would buy</legend>
 <div class="bb-checks">
-<sc-for list="{{allItems}}" as="it" hint-placeholder-count="19">
+<sc-for list="{{allItems}}" as="it" hint-placeholder-count="21">
 <label class="bb-ck"><input type="checkbox" name="product" value="{{it.name}}"><span>{{it.name}}</span></label>
 </sc-for>
 </div></fieldset>
@@ -323,6 +323,8 @@ class Component extends DCLogic {
       I('Shirt', 'The Tree shirt', 'Plate I across the chest, on a soft black tee.', 'planned', '0440f6eba2c12d608955b6c0cfde3344'),
       I('Shirt', 'The Crucible shirt', 'Plate V across the chest, on a soft black tee.', 'planned', 'ffcd7c30b8e9b14bf5248666e2a577f1'),
       I('Shirt', 'Music of the Spheres shirt', 'The wide panorama as a band across the chest.', 'planned', '1055aad1ff775c82c68521c86ec732f3'),
+      I('Hat', 'The Seal of the Spheres cap', 'The tuning-fork emblem from Plate I of Series II, on a soft black dad hat.', 'planned', [['ded243cbad7cfdf24c13c330ab4ab965', 'Front'], ['bb275574c8009ce13ba4cae726911a47', 'Front left'], ['0d7d5113c30887d908db965749d6fd24', 'Side'], ['42fe9f0f9315b2fb94d86b91cb7c6639', 'Front right']]),
+      I('Hat', 'Panorama band cap', 'A Series II panorama as a wide band across the front of a structured cap.', 'dev'),
       I('Print', 'Art print', 'Any plate as a museum-quality print.', 'planned'),
       I('Print', 'Framed print', 'Any plate, framed and ready to hang.', 'planned'),
       I('Accessory', 'Tote bag', 'A plate on a sturdy everyday tote.', 'planned'),
