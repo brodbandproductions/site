@@ -63,7 +63,7 @@ if (!location.hash) { window.scrollTo(0, 0); }
 /* Zoom: click an engraved image (opening plates, Formulated banner and cards) to view it large; click again to return */
 (function () {
   var imgs = document.querySelectorAll('.bb-plate > div, .bb-c2img');
-  if (!imgs.length) return;
+  if (!imgs.length && !document.querySelector('[data-zoom-src]')) return;
   var css = document.createElement('style');
   css.textContent =
     '.bb-zoomable{cursor:zoom-in;transition:box-shadow .25s,border-color .25s}' +
@@ -88,8 +88,8 @@ if (!location.hash) { window.scrollTo(0, 0); }
     if (last) last.focus({ preventScroll: true });
   }
   function onKey(e) { if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') { e.preventDefault(); close(); } }
-  function open(el) {
-    var m = /url\(["']?([^"')]+)["']?\)/.exec(getComputedStyle(el).backgroundImage || '');
+  function open(el, src, alt) {
+    var m = src ? [0, src] : /url\(["']?([^"')]+)["']?\)/.exec(getComputedStyle(el).backgroundImage || '');
     if (!m) return;
     last = el;
     box = document.createElement('div');
@@ -100,13 +100,20 @@ if (!location.hash) { window.scrollTo(0, 0); }
     box.tabIndex = -1;
     var img = document.createElement('img');
     img.src = m[1];
-    img.alt = el.getAttribute('aria-label') || '';
+    img.alt = alt || el.getAttribute('aria-label') || '';
     box.appendChild(img);
     box.addEventListener('click', close);
     document.body.appendChild(box);
     requestAnimationFrame(function () { if (box) { box.classList.add('bb-zoom-on'); box.focus({ preventScroll: true }); } });
     document.addEventListener('keydown', onKey);
   }
+  // Buttons that open a given image (e.g. the magnifier on the Collected plate picker)
+  Array.prototype.forEach.call(document.querySelectorAll('[data-zoom-src]'), function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault(); e.stopPropagation();
+      open(btn, btn.getAttribute('data-zoom-src'), btn.getAttribute('data-zoom-alt'));
+    });
+  });
   Array.prototype.forEach.call(imgs, function (el) {
     el.classList.add('bb-zoomable');
     el.setAttribute('tabindex', '0');

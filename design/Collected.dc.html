@@ -72,6 +72,9 @@ a{color:#F2EDE0}a:hover{color:#FFFFFF}
 .bb-pk::after{content:"";position:absolute;top:10px;right:10px;width:22px;height:22px;border-radius:50%;border:1.5px solid #F2EDE0;background:rgba(11,11,11,.7);box-sizing:border-box}
 .bb-pk:has(input:checked){border-color:#E9D3A0;box-shadow:0 0 16px rgba(242,222,170,.18)}
 .bb-pk:has(input:checked)::after{background:#E9D3A0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%230B0B0B' stroke-width='2.2'/%3E%3C/svg%3E") center / 14px no-repeat;border-color:#E9D3A0}
+.bb-pk-z{position:absolute;left:8px;top:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1.5px solid #F2EDE0;border-radius:50%;background:rgba(11,11,11,.72);color:#E9D3A0;cursor:zoom-in;padding:0}
+.bb-pk-z:hover{background:#0B0B0B;color:#FFF6E2}
+.bb-pk-z:focus-visible{outline:2px solid #F2EDE0;outline-offset:2px}
 .bb-pk:has(input:focus-visible){outline:2px solid #F2EDE0;outline-offset:3px}
 @media (max-width:980px){.bb-pick{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.bb-pick{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -232,7 +235,7 @@ html{scroll-behavior:smooth}
 <p class="bb-fine" style="margin-top: -4px">Tap the plates you would most like to own. Their stories live on the <a href="About.dc.html">Formulated</a> page.</p>
 <div class="bb-pick">
 <sc-for list="{{allPlates}}" as="p" hint-placeholder-count="16">
-<label class="bb-pk"><input type="checkbox" name="plate" value="{{p.title}}"><span class="bb-pk-img" style="{{p.bg}}" aria-hidden="true"></span><span class="bb-pk-lab"><span class="bb-mono">{{p.series}} · {{p.no}}</span><span class="bb-pk-t">{{p.title}}</span></span></label>
+<label class="bb-pk"><input type="checkbox" name="plate" value="{{p.title}}"><span class="bb-pk-img" style="{{p.bg}}" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="{{p.src}}" data-zoom-alt="{{p.title}}" aria-label="View {{p.title}} in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">{{p.series}} · {{p.no}}</span><span class="bb-pk-t">{{p.title}}</span></span></label>
 </sc-for>
 </div></fieldset>
 <fieldset class="bb-fs"><legend>Products you would buy</legend>
@@ -277,7 +280,7 @@ class Component extends DCLogic {
   constructor(props) { super(props); this.state = { menuOpen: false, showTop: false, sent: false }; if (typeof window !== 'undefined') { try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; if (!location.hash) window.scrollTo(0, 0); } catch (e) {} } var self = this; if (typeof window !== 'undefined') { window.addEventListener('scroll', function () { var de = document.documentElement, y = window.scrollY || de.scrollTop || 0, v = y > 200 && (y + window.innerHeight) >= (de.scrollHeight - 320); if (v !== self.state.showTop) self.setState({ showTop: v }); }, { passive: true }); } }
   renderVals() {
     var self = this, s = this.state;
-    function P(no, title, meaning, id, series, pos) { return { no: no, series: 'Series ' + series, title: title, meaning: meaning, bg: 'background-image: url(/_blob/' + id + '); background-position: ' + (pos || '50% 50%') + (series === 'I' ? '' : '; background-size: 330%') }; }
+    function P(no, title, meaning, id, series, pos) { return { no: no, series: 'Series ' + series, src: '/_blob/' + id, title: title, meaning: meaning, bg: 'background-image: url(/_blob/' + id + '); background-position: ' + (pos || '50% 50%') + (series === 'I' ? '' : '; background-size: 330%') }; }
     var seriesOne = [
       P('Plate 0', 'The Ember', 'Every song begins as a spark.', '5abad6c63c2639e46ddbf25a3f85b974', 'I'),
       P('Plate I', 'The Tree', 'A single idea grows into a full arrangement.', '4250c15923301c0c09142fe868c0269d', 'I'),
