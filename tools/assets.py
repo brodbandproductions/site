@@ -7,6 +7,23 @@ from PIL import Image
 S=os.environ.get('BB_MEDIA','/tmp/claude-0/-home-claude/e8deede6-6d24-5a37-9461-1f7fdfa45203/scratchpad/')
 OUT=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'public')+'/'
 M={
+ '10c7bcdb05085b3caf5ae3b5a57c4098':('merch/tank-tree-front.jpg','images/collected/tank-tree-front.jpg'),
+ '99d85cc86eae5c3cf6557ea3c301b557':('merch/tank-tree-side.jpg','images/collected/tank-tree-side.jpg'),
+ 'caf7715505d54bdbcc96d880db1d9f13':('merch/tank-tree-model.jpg','images/collected/tank-tree-model.jpg'),
+ 'b750c2fe1236352e699ffc20a81a1dd6':('merch/tank-tree-close.jpg','images/collected/tank-tree-close.jpg'),
+ 'fe2504117ebf3f58ccd24443ee167463':('merch/tank-spheres-front.jpg','images/collected/tank-spheres-front.jpg'),
+ '7d92ba1ff5b86026df24dabf8bff4de6':('merch/tank-spheres-side.jpg','images/collected/tank-spheres-side.jpg'),
+ '969507c7df8e79e91f948e9e715924f5':('merch/tank-spheres-model.jpg','images/collected/tank-spheres-model.jpg'),
+ '4d8767fd2869fa50ad1cd59eebc0360a':('merch/tank-spheres-close.jpg','images/collected/tank-spheres-close.jpg'),
+ 'f102a2b271e7a0d5c2a56f210ffef3c0':('merch/print-tree.jpg','images/collected/print-tree.jpg'),
+ 'dc50c997afb2e05b4e25b53a9b06962d':('merch/print-tree-held.jpg','images/collected/print-tree-held.jpg'),
+ '52bc50d9abc58d3f7dbd94a2914fba8a':('merch/print-crucible.jpg','images/collected/print-crucible.jpg'),
+ 'df99f4272ef9fd6aac6e8fd5deba8589':('merch/print-crucible-hung.jpg','images/collected/print-crucible-hung.jpg'),
+ '3f2bbc8e716f6aecda9e79f07706cbb9':('merch/print-spheres.jpg','images/collected/print-spheres.jpg'),
+ 'd2be5560842ae5d417d9471becb08a01':('merch/framed-tree.jpg','images/collected/framed-tree.jpg'),
+ '8e14f2c624bd6473c783e5cd17a76146':('merch/framed-tree-held.jpg','images/collected/framed-tree-held.jpg'),
+ '9286392b7b604e4ec30056f88764c5c8':('merch/framed-crucible.jpg','images/collected/framed-crucible.jpg'),
+ '7a8207a553e46976ad50262b763cd5da':('merch/framed-crucible-held.jpg','images/collected/framed-crucible-held.jpg'),
  'be3c4670bc115cd789a87be67c6ead24':('merch/band-hat-front.jpg','images/collected/hat-band-front.jpg'),
  '88dd499b3546b6a125a17d2e25299eba':('merch/band-hat-left.jpg','images/collected/hat-band-front-left.jpg'),
  '17f6a9ed03f4ab00546d3daac504c37e':('merch/band-hat-right.jpg','images/collected/hat-band-front-right.jpg'),
