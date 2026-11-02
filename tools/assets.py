@@ -7,6 +7,13 @@ from PIL import Image
 S=os.environ.get('BB_MEDIA','/tmp/claude-0/-home-claude/e8deede6-6d24-5a37-9461-1f7fdfa45203/scratchpad/')
 OUT=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'public')+'/'
 M={
+ 'e66118f805c37a3e00adface053dd335':('merch/journal-tree.jpg','images/collected/journal-tree.jpg'),
+ '5c4fd79d271a7b866b47e02ad02e9e5d':('merch/journal-tree-held.jpg','images/collected/journal-tree-held.jpg'),
+ '1bd2c18faca619d3204f6d87e36fefea':('merch/journal-crucible.jpg','images/collected/journal-crucible.jpg'),
+ 'efcff4e0561451ee81dcc6c2446f08f2':('merch/journal-crucible-held.jpg','images/collected/journal-crucible-held.jpg'),
+ 'bf0890679f673f545f4d76e12dd2992d':('merch/tote-crucible.jpg','images/collected/tote-crucible.jpg'),
+ '2ab34f8f187678f240ed1a02b31e2424':('merch/tote-crucible-worn.jpg','images/collected/tote-crucible-worn.jpg'),
+ '770b895cf30e3a74b98afd28bc425127':('merch/tote-crucible-flat.jpg','images/collected/tote-crucible-flat.jpg'),
  '10c7bcdb05085b3caf5ae3b5a57c4098':('merch/tank-tree-front.jpg','images/collected/tank-tree-front.jpg'),
  '99d85cc86eae5c3cf6557ea3c301b557':('merch/tank-tree-side.jpg','images/collected/tank-tree-side.jpg'),
  'caf7715505d54bdbcc96d880db1d9f13':('merch/tank-tree-model.jpg','images/collected/tank-tree-model.jpg'),

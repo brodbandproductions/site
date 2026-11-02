@@ -202,14 +202,13 @@ html{scroll-behavior:smooth}
 <div class="bb-shead">
 <div class="bb-eye">The Formula collection</div>
 <h2 class="bb-h bb-sh2">art to wear, keep and hang</h2>
-<p class="bb-body">The plates on things made to last. Products marked planned are being sampled now; the others follow once we find the right makers.</p>
+<p class="bb-body">The plates on things made to last. More products follow as we find the right makers.</p>
 </div>
 <ul class="bb-prods">
 <sc-for list="{{artItems}}" as="it" hint-placeholder-count="14">
 <li class="bb-pc"><div class="{{it.imgCls}}" style="{{it.imgStyle}}" role="img" aria-label="{{it.imgAlt}}" data-zoom-src="{{it.zoom}}" data-zoom-alt="{{it.imgAlt}}"><span class="bb-mono">Mock-up to come</span><span>{{it.name}}</span></div><sc-if value="{{it.multi}}"><div class="bb-views" role="group" aria-label="{{it.name}} views"><sc-for list="{{it.views}}" as="v"><button type="button" class="bb-vw {{v.on}}" style="{{v.bg}}" data-view-src="{{v.src}}" aria-label="{{v.label}}" aria-pressed="{{v.pressed}}" title="{{v.label}}" onClick="{{v.pick}}"></button></sc-for></div></sc-if><div class="bb-pc-top"><span class="bb-mono bb-pl-no">{{it.kind}}</span><span class="bb-st {{it.stCls}}">{{it.status}}</span></div><span class="bb-pc-t">{{it.name}}</span><p class="bb-pc-d">{{it.desc}}</p><a href="#picks" class="bb-pc-a">{{it.cta}}</a></li>
 </sc-for>
 </ul>
-<div class="bb-ed"><div class="bb-slot bb-ed-img"><span class="bb-mono">Mock-up to come</span><span>{{edition.name}}</span></div><div class="bb-ed-txt"><div class="bb-pc-top"><span class="bb-mono bb-pl-no">{{edition.kind}}</span><span class="bb-st {{edition.stCls}}">{{edition.status}}</span></div><span class="bb-pc-t" style="font-size: 28px">{{edition.name}}</span><p class="bb-pc-d">{{edition.desc}}</p><a href="#picks" class="bb-pc-a">{{edition.cta}}</a></div></div>
 </div>
 </section>
 
@@ -218,7 +217,7 @@ html{scroll-behavior:smooth}
 <div class="bb-shead">
 <div class="bb-eye">brodband essentials</div>
 <h2 class="bb-h bb-sh2">the mark of the maker</h2>
-<p class="bb-body">Simple pieces carrying the brodband wordmark and emblems.</p>
+<p class="bb-body">Simple pieces carrying the brodband wordmark.</p>
 </div>
 <ul class="bb-prods bb-prods-3">
 <sc-for list="{{brandItems}}" as="it" hint-placeholder-count="6">
@@ -313,7 +312,7 @@ class Component extends DCLogic {
     function I(kind, name, desc, st, imgs) {
       var t = ST[st];
       if (typeof imgs === 'string') imgs = [[imgs, 'Front']];
-      imgs = imgs || [];
+      imgs = (imgs || []).slice(0, 4);
       var cur = Math.min((s.view && s.view[name]) || 0, Math.max(imgs.length - 1, 0));
       var views = imgs.map(function (v, k) { return { src: '/_blob/' + v[0], bg: 'background-image: url(/_blob/' + v[0] + ')', label: v[1], on: k === cur ? 'bb-vw-on' : '', pressed: k === cur ? 'true' : 'false', pick: function () { var m = Object.assign({}, s.view || {}); m[name] = k; self.setState({ view: m }); } }; });
       var img = imgs.length ? imgs[cur][0] : '';
@@ -323,32 +322,26 @@ class Component extends DCLogic {
       I('Shirt', 'The Tree shirt', 'Plate I across the chest, on a soft black tee.', 'planned', '0440f6eba2c12d608955b6c0cfde3344'),
       I('Shirt', 'The Crucible shirt', 'Plate V across the chest, on a soft black tee.', 'planned', 'ffcd7c30b8e9b14bf5248666e2a577f1'),
       I('Shirt', 'Music of the Spheres shirt', 'The wide panorama as a band across the chest.', 'planned', '1055aad1ff775c82c68521c86ec732f3'),
-      I('Hat', 'The Seal of the Spheres cap', 'The tuning-fork emblem from Plate I of Series II, on a soft black dad hat.', 'planned', [['ded243cbad7cfdf24c13c330ab4ab965', 'Front'], ['bb275574c8009ce13ba4cae726911a47', 'Front left'], ['0d7d5113c30887d908db965749d6fd24', 'Side'], ['42fe9f0f9315b2fb94d86b91cb7c6639', 'Front right']]),
-      I('Hat', 'The Resonance Band cap', 'The tuning fork and its sound wave as a wide engraved band across a soft black dad hat.', 'planned', [['be3c4670bc115cd789a87be67c6ead24', 'Front'], ['88dd499b3546b6a125a17d2e25299eba', 'Front left'], ['17f6a9ed03f4ab00546d3daac504c37e', 'Front right'], ['0d9367c8b2c111b056af84766422fe14', 'Side']]),
       I('Tank top', 'The Tree tank top', 'Plate I on a black racerback tank.', 'planned', [['10c7bcdb05085b3caf5ae3b5a57c4098', 'Front'], ['99d85cc86eae5c3cf6557ea3c301b557', 'Side'], ['caf7715505d54bdbcc96d880db1d9f13', 'Worn'], ['b750c2fe1236352e699ffc20a81a1dd6', 'Close-up']]),
       I('Tank top', 'Music of the Spheres tank top', 'The panorama as a band across a black racerback tank.', 'planned', [['fe2504117ebf3f58ccd24443ee167463', 'Front'], ['7d92ba1ff5b86026df24dabf8bff4de6', 'Side'], ['969507c7df8e79e91f948e9e715924f5', 'Worn'], ['4d8767fd2869fa50ad1cd59eebc0360a', 'Close-up']]),
-      I('Print', 'Art print', 'Any plate on matte paper: 12 \u00d7 18 in for the plates, 10 \u00d7 24 in for the panoramas.', 'planned', [['f102a2b271e7a0d5c2a56f210ffef3c0', 'The Tree'], ['dc50c997afb2e05b4e25b53a9b06962d', 'The Tree, held'], ['52bc50d9abc58d3f7dbd94a2914fba8a', 'The Crucible'], ['df99f4272ef9fd6aac6e8fd5deba8589', 'The Crucible, hung'], ['3f2bbc8e716f6aecda9e79f07706cbb9', 'Music of the Spheres panorama']]),
+      I('Hat', 'The Seal of the Spheres cap', 'The tuning-fork emblem from Plate I of Series II, on a soft black dad hat.', 'planned', [['ded243cbad7cfdf24c13c330ab4ab965', 'Front'], ['bb275574c8009ce13ba4cae726911a47', 'Front left'], ['0d7d5113c30887d908db965749d6fd24', 'Side'], ['42fe9f0f9315b2fb94d86b91cb7c6639', 'Front right']]),
+      I('Hat', 'The Resonance Band cap', 'The tuning fork and its sound wave as a wide engraved band across a soft black dad hat.', 'planned', [['be3c4670bc115cd789a87be67c6ead24', 'Front'], ['88dd499b3546b6a125a17d2e25299eba', 'Front left'], ['17f6a9ed03f4ab00546d3daac504c37e', 'Front right'], ['0d9367c8b2c111b056af84766422fe14', 'Side']]),
+      I('Print', 'Panorama print', 'Music of the Spheres on matte paper, 10 \u00d7 24 in.', 'planned', [['3f2bbc8e716f6aecda9e79f07706cbb9', 'Front']]),
       I('Print', 'Framed print', 'Any plate in a black frame, ready to hang.', 'planned', [['d2be5560842ae5d417d9471becb08a01', 'The Tree'], ['8e14f2c624bd6473c783e5cd17a76146', 'The Tree, held'], ['9286392b7b604e4ec30056f88764c5c8', 'The Crucible'], ['7a8207a553e46976ad50262b763cd5da', 'The Crucible, held']]),
-      I('Accessory', 'Tote bag', 'A plate on a sturdy everyday tote.', 'planned'),
-      I('Accessory', 'Sticker set', 'Small plates and emblems for cases and laptops.', 'planned'),
-      I('Stationery', 'Songwriter\u2019s journal', 'Where every song begins as a spark.', 'planned'),
-      I('Drinkware', 'Wrap-around mug', 'A Series II panorama wrapping all the way round.', 'dev', [['6206f821c7fa74d57edd8896a52d2c1b', 'Front'], ['0b321091132500988e05d339decc227e', 'Handle on the left'], ['ecb309a06104ebcaeefe27ea32624349', 'Handle on the right']]),
-      I('Studio', 'Acoustic panel set', 'A panorama across sound-absorbing panels.', 'dev'),
-      I('Music', 'Guitar strap', 'The plates in motion, over the shoulder.', 'dev'),
-      I('Music', 'Turntable slipmat', 'Music of the Spheres turning under the record.', 'later')
+      I('Stationery', 'The Tree journal', 'A hardcover journal with Plate I on the cover: where every song begins as a spark.', 'planned', [['e66118f805c37a3e00adface053dd335', 'Front'], ['5c4fd79d271a7b866b47e02ad02e9e5d', 'Held']]),
+      I('Stationery', 'The Crucible journal', 'A hardcover journal with Plate V on the cover.', 'planned', [['1bd2c18faca619d3204f6d87e36fefea', 'Front'], ['efcff4e0561451ee81dcc6c2446f08f2', 'Held']]),
+      I('Accessory', 'The Crucible tote', 'Plate V on an organic cotton tote.', 'planned', [['bf0890679f673f545f4d76e12dd2992d', 'Front'], ['2ab34f8f187678f240ed1a02b31e2424', 'Carried'], ['770b895cf30e3a74b98afd28bc425127', 'Flat lay']]),
+      I('Drinkware', 'Wrap-around mug', 'A Series II panorama wrapping all the way round.', 'dev', [['6206f821c7fa74d57edd8896a52d2c1b', 'Front'], ['0b321091132500988e05d339decc227e', 'Handle on the left'], ['ecb309a06104ebcaeefe27ea32624349', 'Handle on the right']])
     ];
-    var edition = I('Edition', 'Numbered limited edition', 'Signed, numbered prints of each plate, in small runs.', 'later');
     var brandItems = [
       I('Hat', 'brodband dad hat', 'The wordmark on a soft, low-profile cap.', 'planned', [['28cba3b25edccaeaf478b550293b77b0', 'Front'], ['9cfd772e8416a324d94399adfd887fc0', 'Side']]),
       I('Hat', 'brodband structured cap', 'The wordmark on a structured cap.', 'planned', [['f176953e61c190bc73251e9141ee9bca', 'Front'], ['72cc92a50fe74690f8c36cd90c300109', 'Side']]),
       I('Hat', 'brodband snapback', 'The wordmark on a flat-brim snapback.', 'planned', [['040bcbbc380f28d17a4d4d191285381d', 'Front'], ['3744cb0ff52b40f575d9d5e6983dc379', 'Left side'], ['0859aa42bb2384b2092c253ca5e3c757', 'Right side']]),
-      I('Hat', 'brodband beanie', 'The wordmark on a cuffed knit beanie.', 'planned', '312564c9283117c7991730fb3017ddca'),
-      I('Music', 'Guitar pick', 'The tuning-fork emblem; one comes free with every order.', 'planned'),
-      I('Accessory', 'Pin or patch', 'The treble-clef emblem in enamel or embroidery.', 'later')
+      I('Hat', 'brodband beanie', 'The wordmark on a cuffed knit beanie.', 'planned', '312564c9283117c7991730fb3017ddca')
     ];
     return {
       seriesOne: seriesOne, seriesTwo: seriesTwo, seriesThree: seriesThree, allPlates: seriesOne.concat(seriesTwo, seriesThree),
-      artItems: artItems, edition: edition, brandItems: brandItems, allItems: artItems.concat([edition], brandItems),
+      artItems: artItems, brandItems: brandItems, allItems: artItems.concat(brandItems),
       sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'],
       showForm: !s.sent, showThanks: s.sent,
       submit: function (e) { if (e && e.preventDefault) e.preventDefault(); self.setState({ sent: true }); },
