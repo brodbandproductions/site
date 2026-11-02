@@ -219,7 +219,7 @@ html{scroll-behavior:smooth}
 <h2 class="bb-h bb-sh2">the mark of the maker</h2>
 <p class="bb-body">Simple pieces carrying the brodband wordmark.</p>
 </div>
-<ul class="bb-prods bb-prods-3">
+<ul class="bb-prods">
 <sc-for list="{{brandItems}}" as="it" hint-placeholder-count="6">
 <li class="bb-pc"><div class="{{it.imgCls}}" style="{{it.imgStyle}}" role="img" aria-label="{{it.imgAlt}}" data-zoom-src="{{it.zoom}}" data-zoom-alt="{{it.imgAlt}}"><span class="bb-mono">Mock-up to come</span><span>{{it.name}}</span></div><sc-if value="{{it.multi}}"><div class="bb-views" role="group" aria-label="{{it.name}} views"><sc-for list="{{it.views}}" as="v"><button type="button" class="bb-vw {{v.on}}" style="{{v.bg}}" data-view-src="{{v.src}}" aria-label="{{v.label}}" aria-pressed="{{v.pressed}}" title="{{v.label}}" onClick="{{v.pick}}"></button></sc-for></div></sc-if><div class="bb-pc-top"><span class="bb-mono bb-pl-no">{{it.kind}}</span><span class="bb-st {{it.stCls}}">{{it.status}}</span></div><span class="bb-pc-t">{{it.name}}</span><p class="bb-pc-d">{{it.desc}}</p><a href="#picks" class="bb-pc-a">{{it.cta}}</a></li>
 </sc-for>
