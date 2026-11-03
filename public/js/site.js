@@ -1,7 +1,10 @@
 /* brodband productions: shared page behaviour */
-// Always open a page at the top on load or reload (links to a #section still jump there)
+// Always open a page at the top on load or reload. A leftover #section from an in-page link
+// (like "Tell us your pick") is cleared so a reload does not jump back down.
 if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
-if (!location.hash) { window.scrollTo(0, 0); }
+if (location.hash && location.hash !== '#top') { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
+window.scrollTo(0, 0);
+window.addEventListener('load', function () { window.scrollTo(0, 0); });
 (function () {
   // Mobile menu
   var btn = document.querySelector('[data-menu-toggle]');
