@@ -15,7 +15,7 @@
   Array.prototype.forEach.call(document.querySelectorAll('input[data-pick="plate"]'), function (c) { c.addEventListener('change', update); });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    form.querySelector('input[name="plates"]').value = join('plate');
+    form.querySelector('input[name="engravings"]').value = join('plate');
     form.querySelector('input[name="products"]').value = join('product');
     var btn = form.querySelector('button[type="submit"]');
     btn.disabled = true; btn.textContent = 'Sending…';

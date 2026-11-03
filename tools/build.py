@@ -195,7 +195,7 @@ def post_collected(p):
     assert p.count(a) == 1
     p = p.replace(a, '<form class="bb-form" id="collected-form" name="collected-interest" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">\n'
         '<input type="hidden" name="form-name" value="collected-interest">\n'
-        '<input type="hidden" name="plates" value="">\n<input type="hidden" name="products" value="">\n'
+        '<input type="hidden" name="engravings" value="">\n<input type="hidden" name="products" value="">\n'
         '<p class="bb-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>')
     p = p.replace('<div role="status" style="border: 1.5px solid #F2EDE0;', '<div role="status" data-thanks hidden tabindex="-1" style="border: 1.5px solid #F2EDE0;')
     p = p.replace('Your picks help decide what we make first. This is a preview of the confirmation; on the live site your answers are recorded.',
