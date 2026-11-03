@@ -134,6 +134,7 @@ M={
 # and tagged with copyright metadata. Print files never go on the website.
 PLATE_DIRS=('images/plates/','images/formulated/','images/collected/plate-')
 PLATE_MAX=1200
+PLATE_ZOOM=1800
 NOTICE='(c) 2026 brodband productions. Original artwork; reproduction not permitted.'
 def _exif(im):
     ex=im.getexif(); ex[0x8298]=NOTICE; ex[0x013B]='brodband productions'; ex[0x010E]='Original engraved plate by brodband productions'; return ex
@@ -157,6 +158,11 @@ def copy_all():
         if dst.endswith('.jpg'):
             im=Image.open(S+src).convert('RGB')
             plate=dst.startswith(PLATE_DIRS)
+            if plate:
+                z=im.copy()
+                if z.width>PLATE_ZOOM: z=z.resize((PLATE_ZOOM,round(z.height*PLATE_ZOOM/z.width)),Image.LANCZOS)
+                z=_sign(z); zo=OUT+'images/zoom/'+dst[len('images/'):]; os.makedirs(os.path.dirname(zo),exist_ok=True)
+                z.save(zo,quality=80,optimize=True,progressive=True,exif=_exif(z))
             mx=PLATE_MAX if plate else 1600
             if im.width>mx: im=im.resize((mx,round(im.height*mx/im.width)),Image.LANCZOS)
             if plate: im=_sign(im)

@@ -6,19 +6,24 @@
   var thanks = document.querySelector('[data-thanks]');
   if (!form || !thanks) return;
   function join(name) {
-    return Array.prototype.map.call(form.querySelectorAll('input[name="' + name + '"]:checked'), function (c) { return c.value; }).join(', ');
+    return Array.prototype.map.call(document.querySelectorAll('input[data-pick="' + name + '"]:checked'), function (c) { return c.value; }).join(', ');
   }
+  // Live summary of the plates chosen in the gallery
+  var summary = document.querySelector('[data-plates-summary]');
+  var empty = summary ? summary.textContent : '';
+  function update() { if (!summary) return; var v = join('plate'); summary.textContent = v ? v : empty; summary.classList.toggle('bb-has-picks', !!v); }
+  Array.prototype.forEach.call(document.querySelectorAll('input[data-pick="plate"]'), function (c) { c.addEventListener('change', update); });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     form.querySelector('input[name="plates"]').value = join('plate');
     form.querySelector('input[name="products"]').value = join('product');
     var btn = form.querySelector('button[type="submit"]');
     btn.disabled = true; btn.textContent = 'Sending…';
-    var fd = new FormData(form); fd.delete('plate'); fd.delete('product');
+    var fd = new FormData(form);
     fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(fd).toString() })
       .then(function (r) {
         if (!r.ok) throw new Error(r.status);
-        form.reset(); form.hidden = true; thanks.hidden = false; thanks.focus();
+        form.reset(); Array.prototype.forEach.call(document.querySelectorAll('input[data-pick]'), function (c) { c.checked = false; }); update(); form.hidden = true; thanks.hidden = false; thanks.focus();
       })
       .catch(function () { form.submit(); })
       .then(function () { btn.disabled = false; btn.textContent = 'Send my picks'; });

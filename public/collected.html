@@ -94,6 +94,40 @@ a{color:#F2EDE0}a:hover{color:#FFFFFF}
 .bb-pk:has(input:focus-visible){outline:2px solid #F2EDE0;outline-offset:3px}
 @media (max-width:980px){.bb-pick{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.bb-pick{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.bb-gal-s{display:flex;flex-direction:column;gap:22px}
+.bb-gal-h{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:1px solid #262524;padding-bottom:10px}
+.bb-gal-h .bb-h{font-size:26px}
+.bb-gal-h .bb-mono{font-size:12px;color:#A9A6A6;letter-spacing:0.06em}
+.bb-gal{list-style:none;margin:0;padding:0;display:grid;gap:44px 36px}
+.bb-gal-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bb-gal-3 .bb-gp:first-child{grid-column:1 / -1}
+.bb-gal-3 .bb-gp:first-child .bb-gp-img{aspect-ratio:1584 / 672}
+.bb-gal-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bb-gp{display:flex;flex-direction:column;gap:14px;min-width:0}
+.bb-gp-fig{position:relative}
+.bb-gp-img{display:block;background-size:cover;background-position:center;border:1px solid #2C2B29;transition:border-color .25s,box-shadow .25s}
+.bb-gp-sq{aspect-ratio:16 / 10}
+.bb-gp-wide{aspect-ratio:1600 / 529}
+.bb-gp:hover .bb-gp-img{border-color:#5A5855}
+.bb-gp:has(input:checked) .bb-gp-img{border-color:#E9D3A0;box-shadow:0 0 22px rgba(242,222,170,.16)}
+.bb-gp .bb-pk-z{top:10px;left:auto;right:10px}
+@media (hover:hover){.bb-gp .bb-pk-z{opacity:0;transition:opacity .2s}.bb-gp:hover .bb-pk-z,.bb-gp .bb-pk-z:focus-visible{opacity:1}}
+.bb-gp-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.bb-gp-txt{display:flex;flex-direction:column;gap:3px;min-width:0}
+.bb-gp-t{font-size:19px;font-weight:600;line-height:1.25}
+.bb-gp-no{font-size:11px;letter-spacing:0.08em;color:#8C8985}
+.bb-like{position:relative;cursor:pointer;flex:none}
+.bb-like input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.bb-like-b{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#A9A6A6;border:1px solid #3A3936;padding:7px 12px;transition:color .2s,border-color .2s,background .2s}
+.bb-like:hover .bb-like-b{color:#F2EDE0;border-color:#8C8985}
+.bb-like input:checked + .bb-like-b{color:#0B0B0B;background:#E9D3A0;border-color:#E9D3A0}
+.bb-like input:focus-visible + .bb-like-b{outline:2px solid #F2EDE0;outline-offset:3px}
+.bb-legend{font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#A9A6A6}
+.bb-fields2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:900px}
+.bb-fields2 .bb-field{max-width:none}
+@media (max-width:980px){.bb-gal-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.bb-gal-2{grid-template-columns:minmax(0,1fr)}.bb-fields2{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.bb-gal-3{grid-template-columns:minmax(0,1fr)}.bb-gal{gap:36px}}
 .bb-form{display:flex;flex-direction:column;gap:30px;max-width:900px}
 .bb-fs{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
 .bb-fs legend{padding:0;margin-bottom:12px;font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#A9A6A6}
@@ -212,16 +246,76 @@ form[hidden]{display:none !important}
 <section class="bb-wrap bb-ph">
 <h1 class="bb-h bb-pt">gathered in the sound of starlight</h1>
 <div class="bb-dbl" aria-hidden="true"></div>
-<p class="bb-pd">The Formula: engraved plates by brodband, scored by Stellium Scale, to wear, keep and hang. The collection is still taking shape, so tell us what you would like to see first.</p>
-<span class="bb-preview">Preview · not yet for sale</span>
+<p class="bb-pd">Music begins as starlight, gathered into sound. Long before there were songs, there was a single note ringing through the dark, and every song since has followed the same formula: the spark, the shaping, the fire and the release. These engraved plates hold that formula, made to keep, wear and display, so a little of the creative fire can travel with you.</p>
+<span class="bb-preview">Preview · help us choose what we make first</span>
 <div class="bb-plate"><div class="bb-plate-img" role="img" aria-label="Engraving of a glowing golden lyre on a rock, with a stag, wolf, serpent, fox, hare, owls and birds gathered around it under the stars" style="background-image: url(/images/collected/plate-the-gathering.jpg)"></div></div>
+</section>
+
+<section class="bb-sec" id="plates">
+<div class="bb-wrap" style="padding-block: 72px; display: flex; flex-direction: column; gap: 44px">
+<div class="bb-shead">
+<div class="bb-eye">The plates</div>
+<h2 class="bb-h bb-sh2">the formula, plate by plate</h2>
+<p class="bb-body">Take your time with each engraving. Open any plate to see it in full, and add the ones that speak to you to your picks. Their stories live on the <a href="/formulated">Formulated</a> page.</p>
+</div>
+<div class="bb-gal-s">
+<div class="bb-gal-h"><h3 class="bb-h">Series I · The Formula</h3><span class="bb-mono">the creative process, from spark to release</span></div>
+<ul class="bb-gal bb-gal-3">
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-sq" style="background-image: url(/images/formulated/banner-every-song.jpg)" role="img" aria-label="The Ember"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/banner-every-song.jpg" data-zoom-alt="The Ember" aria-label="View The Ember in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Ember</span><span class="bb-mono bb-gp-no">Series I · Plate 0</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Ember" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-sq" style="background-image: url(/images/formulated/card-full-arrangement.jpg)" role="img" aria-label="The Tree"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-full-arrangement.jpg" data-zoom-alt="The Tree" aria-label="View The Tree in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Tree</span><span class="bb-mono bb-gp-no">Series I · Plate I</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Tree" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-sq" style="background-image: url(/images/formulated/card-co-written-song.jpg)" role="img" aria-label="The Threads"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-co-written-song.jpg" data-zoom-alt="The Threads" aria-label="View The Threads in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Threads</span><span class="bb-mono bb-gp-no">Series I · Plate II</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Threads" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-sq" style="background-image: url(/images/formulated/card-animated-video-v2.jpg)" role="img" aria-label="The Projection"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-animated-video-v2.jpg" data-zoom-alt="The Projection" aria-label="View The Projection in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Projection</span><span class="bb-mono bb-gp-no">Series I · Plate III</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Projection" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-sq" style="background-image: url(/images/formulated/card-live-session.jpg)" role="img" aria-label="The Lantern"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-live-session.jpg" data-zoom-alt="The Lantern" aria-label="View The Lantern in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Lantern</span><span class="bb-mono bb-gp-no">Series I · Plate IV</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Lantern" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-sq" style="background-image: url(/images/formulated/card-release-ready-v2.jpg)" role="img" aria-label="The Crucible"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-release-ready-v2.jpg" data-zoom-alt="The Crucible" aria-label="View The Crucible in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Crucible</span><span class="bb-mono bb-gp-no">Series I · Plate V</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Crucible" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-sq" style="background-image: url(/images/formulated/card-open-door.jpg)" role="img" aria-label="The Open Door"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-open-door.jpg" data-zoom-alt="The Open Door" aria-label="View The Open Door in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Open Door</span><span class="bb-mono bb-gp-no">Series I · Plate VI</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Open Door" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+</ul>
+</div>
+<div class="bb-gal-s">
+<div class="bb-gal-h"><h3 class="bb-h">Series II · The Spheres</h3><span class="bb-mono">panoramas of sound and the cosmos</span></div>
+<ul class="bb-gal bb-gal-2">
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="background-image: url(/images/plates/featured.jpg)" role="img" aria-label="Music of the Spheres"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/featured.jpg" data-zoom-alt="Music of the Spheres" aria-label="View Music of the Spheres in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">Music of the Spheres</span><span class="bb-mono bb-gp-no">Series II · Plate I</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="Music of the Spheres" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="background-image: url(/images/plates/animated.jpg)" role="img" aria-label="The Magic Lantern"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/animated.jpg" data-zoom-alt="The Magic Lantern" aria-label="View The Magic Lantern in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Magic Lantern</span><span class="bb-mono bb-gp-no">Series II · Plate II</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Magic Lantern" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="background-image: url(/images/plates/improvised.jpg)" role="img" aria-label="The Ouroboros"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/improvised.jpg" data-zoom-alt="The Ouroboros" aria-label="View The Ouroboros in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Ouroboros</span><span class="bb-mono bb-gp-no">Series II · Plate III</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Ouroboros" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="background-image: url(/images/plates/collaborated.jpg)" role="img" aria-label="The Confluence"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/collaborated.jpg" data-zoom-alt="The Confluence" aria-label="View The Confluence in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Confluence</span><span class="bb-mono bb-gp-no">Series II · Plate IV</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Confluence" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="background-image: url(/images/plates/connected.jpg)" role="img" aria-label="Resonance"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/connected.jpg" data-zoom-alt="Resonance" aria-label="View Resonance in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">Resonance</span><span class="bb-mono bb-gp-no">Series II · Plate V</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="Resonance" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="background-image: url(/images/plates/not-found.jpg)" role="img" aria-label="Off the Map"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/not-found.jpg" data-zoom-alt="Off the Map" aria-label="View Off the Map in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">Off the Map</span><span class="bb-mono bb-gp-no">Series II · Plate VI</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="Off the Map" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+</ul>
+</div>
+<div class="bb-gal-s">
+<div class="bb-gal-h"><h3 class="bb-h">Series III · The Gathering</h3><span class="bb-mono">inspiration collected and distilled</span></div>
+<ul class="bb-gal bb-gal-2">
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="background-image: url(/images/collected/plate-the-gathering.jpg)" role="img" aria-label="The Gathering"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/collected/plate-the-gathering.jpg" data-zoom-alt="The Gathering" aria-label="View The Gathering in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Gathering</span><span class="bb-mono bb-gp-no">Series III · Plate I</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Gathering" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="background-image: url(/images/collected/plate-the-celestial-hive.jpg)" role="img" aria-label="The Celestial Hive"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/collected/plate-the-celestial-hive.jpg" data-zoom-alt="The Celestial Hive" aria-label="View The Celestial Hive in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Celestial Hive</span><span class="bb-mono bb-gp-no">Series III · Plate II</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Celestial Hive" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="background-image: url(/images/collected/plate-the-alembic-of-the-stars.jpg)" role="img" aria-label="The Alembic of the Stars"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/collected/plate-the-alembic-of-the-stars.jpg" data-zoom-alt="The Alembic of the Stars" aria-label="View The Alembic of the Stars in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">The Alembic of the Stars</span><span class="bb-mono bb-gp-no">Series III · Plate III</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="The Alembic of the Stars" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+
+</ul>
+</div>
+</div>
 </section>
 
 <section class="bb-sec">
 <div class="bb-wrap" style="padding-block: 72px; display: flex; flex-direction: column; gap: 36px">
 <div class="bb-shead">
 <div class="bb-eye">The Formula collection</div>
-<h2 class="bb-h bb-sh2">art to wear, keep and hang</h2>
+<h2 class="bb-h bb-sh2">art to keep, wear and display</h2>
 <p class="bb-body">The plates on things made to last. More products follow as we find the right makers.</p>
 </div>
 <ul class="bb-prods">
@@ -280,85 +374,49 @@ form[hidden]{display:none !important}
 <div class="bb-shead">
 <div class="bb-eye">Your picks</div>
 <h2 class="bb-h bb-sh2">help shape the collection</h2>
-<p class="bb-body">Choose the plates and products you would want. It takes a minute and decides what we make first.</p>
+<p class="bb-body">Tell us which products you would want. Together with the plates you chose above, it decides what we make first.</p>
 </div>
 
-<form class="bb-form" name="collected-interest" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
+<form class="bb-form" id="collected-form" name="collected-interest" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
 <input type="hidden" name="form-name" value="collected-interest">
 <input type="hidden" name="plates" value="">
 <input type="hidden" name="products" value="">
 <p class="bb-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-<fieldset class="bb-fs"><legend>Choose your plates</legend>
-<p class="bb-fine" style="margin-top: -4px">Tap the plates you would most like to own. Their stories live on the <a href="/formulated">Formulated</a> page.</p>
-<div class="bb-pick">
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Ember"><span class="bb-pk-img" style="background-image: url(/images/formulated/banner-every-song.jpg); background-position: 50% 50%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/banner-every-song.jpg" data-zoom-alt="The Ember" aria-label="View The Ember in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series I · Plate 0</span><span class="bb-pk-t">The Ember</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Tree"><span class="bb-pk-img" style="background-image: url(/images/formulated/card-full-arrangement.jpg); background-position: 50% 50%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-full-arrangement.jpg" data-zoom-alt="The Tree" aria-label="View The Tree in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series I · Plate I</span><span class="bb-pk-t">The Tree</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Threads"><span class="bb-pk-img" style="background-image: url(/images/formulated/card-co-written-song.jpg); background-position: 50% 50%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-co-written-song.jpg" data-zoom-alt="The Threads" aria-label="View The Threads in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series I · Plate II</span><span class="bb-pk-t">The Threads</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Projection"><span class="bb-pk-img" style="background-image: url(/images/formulated/card-animated-video-v2.jpg); background-position: 50% 50%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-animated-video-v2.jpg" data-zoom-alt="The Projection" aria-label="View The Projection in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series I · Plate III</span><span class="bb-pk-t">The Projection</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Lantern"><span class="bb-pk-img" style="background-image: url(/images/formulated/card-live-session.jpg); background-position: 50% 50%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-live-session.jpg" data-zoom-alt="The Lantern" aria-label="View The Lantern in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series I · Plate IV</span><span class="bb-pk-t">The Lantern</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Crucible"><span class="bb-pk-img" style="background-image: url(/images/formulated/card-release-ready-v2.jpg); background-position: 50% 50%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-release-ready-v2.jpg" data-zoom-alt="The Crucible" aria-label="View The Crucible in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series I · Plate V</span><span class="bb-pk-t">The Crucible</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Open Door"><span class="bb-pk-img" style="background-image: url(/images/formulated/card-open-door.jpg); background-position: 50% 50%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/formulated/card-open-door.jpg" data-zoom-alt="The Open Door" aria-label="View The Open Door in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series I · Plate VI</span><span class="bb-pk-t">The Open Door</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="Music of the Spheres"><span class="bb-pk-img" style="background-image: url(/images/plates/featured.jpg); background-position: 50% 50%; background-size: 330%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/featured.jpg" data-zoom-alt="Music of the Spheres" aria-label="View Music of the Spheres in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series II · Plate I</span><span class="bb-pk-t">Music of the Spheres</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Magic Lantern"><span class="bb-pk-img" style="background-image: url(/images/plates/animated.jpg); background-position: 50% 50%; background-size: 330%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/animated.jpg" data-zoom-alt="The Magic Lantern" aria-label="View The Magic Lantern in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series II · Plate II</span><span class="bb-pk-t">The Magic Lantern</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Ouroboros"><span class="bb-pk-img" style="background-image: url(/images/plates/improvised.jpg); background-position: 50% 50%; background-size: 330%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/improvised.jpg" data-zoom-alt="The Ouroboros" aria-label="View The Ouroboros in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series II · Plate III</span><span class="bb-pk-t">The Ouroboros</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Confluence"><span class="bb-pk-img" style="background-image: url(/images/plates/collaborated.jpg); background-position: 50% 50%; background-size: 330%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/collaborated.jpg" data-zoom-alt="The Confluence" aria-label="View The Confluence in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series II · Plate IV</span><span class="bb-pk-t">The Confluence</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="Resonance"><span class="bb-pk-img" style="background-image: url(/images/plates/connected.jpg); background-position: 50% 50%; background-size: 330%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/connected.jpg" data-zoom-alt="Resonance" aria-label="View Resonance in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series II · Plate V</span><span class="bb-pk-t">Resonance</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="Off the Map"><span class="bb-pk-img" style="background-image: url(/images/plates/not-found.jpg); background-position: 50% 50%; background-size: 330%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/plates/not-found.jpg" data-zoom-alt="Off the Map" aria-label="View Off the Map in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series II · Plate VI</span><span class="bb-pk-t">Off the Map</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Gathering"><span class="bb-pk-img" style="background-image: url(/images/collected/plate-the-gathering.jpg); background-position: 50% 50%; background-size: 330%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/collected/plate-the-gathering.jpg" data-zoom-alt="The Gathering" aria-label="View The Gathering in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series III · Plate I</span><span class="bb-pk-t">The Gathering</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Celestial Hive"><span class="bb-pk-img" style="background-image: url(/images/collected/plate-the-celestial-hive.jpg); background-position: 50% 50%; background-size: 330%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/collected/plate-the-celestial-hive.jpg" data-zoom-alt="The Celestial Hive" aria-label="View The Celestial Hive in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series III · Plate II</span><span class="bb-pk-t">The Celestial Hive</span></span></label>
-
-<label class="bb-pk"><input type="checkbox" name="plate" value="The Alembic of the Stars"><span class="bb-pk-img" style="background-image: url(/images/collected/plate-the-alembic-of-the-stars.jpg); background-position: 50% 50%; background-size: 330%" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="/images/collected/plate-the-alembic-of-the-stars.jpg" data-zoom-alt="The Alembic of the Stars" aria-label="View The Alembic of the Stars in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">Series III · Plate III</span><span class="bb-pk-t">The Alembic of the Stars</span></span></label>
-
-</div></fieldset>
+<div class="bb-fs"><span class="bb-legend">Your plates</span><p class="bb-fine" data-plates-summary>Choose plates in the gallery above with “Add to my picks”.</p></div>
 <fieldset class="bb-fs"><legend>Products you would buy</legend>
 <div class="bb-checks">
 
-<label class="bb-ck"><input type="checkbox" name="product" value="The Tree shirt"><span>The Tree shirt</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="The Tree shirt"><span>The Tree shirt</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="The Crucible shirt"><span>The Crucible shirt</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="The Crucible shirt"><span>The Crucible shirt</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="Music of the Spheres shirt"><span>Music of the Spheres shirt</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="Music of the Spheres shirt"><span>Music of the Spheres shirt</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="The Tree tank top"><span>The Tree tank top</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="The Tree tank top"><span>The Tree tank top</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="Music of the Spheres tank top"><span>Music of the Spheres tank top</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="Music of the Spheres tank top"><span>Music of the Spheres tank top</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="The Seal of the Spheres cap"><span>The Seal of the Spheres cap</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="The Seal of the Spheres cap"><span>The Seal of the Spheres cap</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="The Resonance Band cap"><span>The Resonance Band cap</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="The Resonance Band cap"><span>The Resonance Band cap</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="Panorama print"><span>Panorama print</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="Panorama print"><span>Panorama print</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="Framed print"><span>Framed print</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="Framed print"><span>Framed print</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="Songwriter’s journal"><span>Songwriter’s journal</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="Songwriter’s journal"><span>Songwriter’s journal</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="The Crucible tote"><span>The Crucible tote</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="The Crucible tote"><span>The Crucible tote</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="Wrap-around mug"><span>Wrap-around mug</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="Wrap-around mug"><span>Wrap-around mug</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="brodband dad hat"><span>brodband dad hat</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="brodband dad hat"><span>brodband dad hat</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="brodband structured cap"><span>brodband structured cap</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="brodband structured cap"><span>brodband structured cap</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="brodband snapback"><span>brodband snapback</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="brodband snapback"><span>brodband snapback</span></label>
 
-<label class="bb-ck"><input type="checkbox" name="product" value="brodband beanie"><span>brodband beanie</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="brodband beanie"><span>brodband beanie</span></label>
 
 </div></fieldset>
 <fieldset class="bb-fs"><legend>Shirt size (optional)</legend>
@@ -383,7 +441,7 @@ form[hidden]{display:none !important}
 <label class="bb-sz"><input type="radio" name="size" value="5XL"><span>5XL</span></label>
 
 </div></fieldset>
-<div class="bb-field"><label for="cl-email">Email (optional)</label><input id="cl-email" name="email" type="email" class="bb-in" autocomplete="email" placeholder="you@example.com"></div>
+<div class="bb-fields2"><div class="bb-field"><label for="cl-name">Name</label><input id="cl-name" name="name" type="text" class="bb-in" autocomplete="name" placeholder="Optional"></div><div class="bb-field"><label for="cl-email">Email</label><input id="cl-email" name="email" type="email" class="bb-in" autocomplete="email" placeholder="Optional, for collection news"></div></div>
 <label class="bb-ck"><input type="checkbox" name="consent" value="yes"><span>Email me when the collection opens. brodband productions will only use your address for collection news, and you can unsubscribe at any time.</span></label>
 <button type="submit" class="bb-b1">Send my picks</button>
 </form>

@@ -191,9 +191,9 @@ def post_loopers(p):
     return p.replace(a, '<div data-log-empty hidden style="padding: 28px 0; color: #A9A6A6; border-bottom: 1px solid #3A3936">No trio')
 
 def post_collected(p):
-    a = '<form class="bb-form" name="collected-interest">'
+    a = '<form class="bb-form" id="collected-form" name="collected-interest">'
     assert p.count(a) == 1
-    p = p.replace(a, '<form class="bb-form" name="collected-interest" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">\n'
+    p = p.replace(a, '<form class="bb-form" id="collected-form" name="collected-interest" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">\n'
         '<input type="hidden" name="form-name" value="collected-interest">\n'
         '<input type="hidden" name="plates" value="">\n<input type="hidden" name="products" value="">\n'
         '<p class="bb-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>')

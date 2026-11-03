@@ -73,7 +73,7 @@ if (!location.hash) { window.scrollTo(0, 0); }
     '.bb-zoomable:focus-visible{outline:2px solid #E9D3A0;outline-offset:3px}' +
     '.bb-zoom{position:fixed;inset:0;z-index:100;background:rgba(11,11,11,0.94);display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box;cursor:zoom-out;opacity:0;transition:opacity .25s}' +
     '.bb-zoom.bb-zoom-on{opacity:1}' +
-    '.bb-zoom img{max-width:100%;max-height:100%;width:auto;height:auto;border:1.5px solid #F2EDE0;padding:8px;background:#0B0B0B;box-sizing:border-box;transform:scale(.96);transition:transform .25s}' +
+    '.bb-zoom img{display:block;max-width:none;max-height:none;border:1.5px solid #F2EDE0;padding:8px;background:#0B0B0B;box-sizing:border-box;transform:scale(.96);transition:transform .25s}' +
     '.bb-zoom.bb-zoom-on img{transform:scale(1)}' +
     '@media (prefers-reduced-motion:reduce){.bb-zoom,.bb-zoom img{transition:none}}';
   document.head.appendChild(css);
@@ -99,7 +99,17 @@ if (!location.hash) { window.scrollTo(0, 0); }
     box.setAttribute('aria-label', 'Enlarged image. Click or press Escape to close.');
     box.tabIndex = -1;
     var img = document.createElement('img');
-    img.src = m[1];
+    // Plates have a larger copy for the full view; fall back to the page image if it is missing
+    var big = m[1].replace(/\/images\/(plates|formulated|collected\/plate-)/, '/images/zoom/$1');
+    img.onerror = function () { if (img.src.indexOf('/images/zoom/') > -1) img.src = m[1]; };
+    function fit() {
+      if (!img.naturalWidth) return;
+      var pad = 16 + 18, vw = window.innerWidth - 2 * pad, vh = window.innerHeight - 2 * pad;
+      var r = Math.min(vw / img.naturalWidth, vh / img.naturalHeight);
+      img.style.width = Math.round(img.naturalWidth * r) + 'px'; img.style.height = Math.round(img.naturalHeight * r) + 'px';
+    }
+    img.onload = fit; window.addEventListener('resize', fit);
+    img.src = big;
     img.alt = alt || el.getAttribute('aria-label') || '';
     box.appendChild(img);
     box.addEventListener('click', close);

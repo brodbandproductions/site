@@ -84,6 +84,40 @@ a{color:#F2EDE0}a:hover{color:#FFFFFF}
 .bb-pk:has(input:focus-visible){outline:2px solid #F2EDE0;outline-offset:3px}
 @media (max-width:980px){.bb-pick{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.bb-pick{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.bb-gal-s{display:flex;flex-direction:column;gap:22px}
+.bb-gal-h{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:1px solid #262524;padding-bottom:10px}
+.bb-gal-h .bb-h{font-size:26px}
+.bb-gal-h .bb-mono{font-size:12px;color:#A9A6A6;letter-spacing:0.06em}
+.bb-gal{list-style:none;margin:0;padding:0;display:grid;gap:44px 36px}
+.bb-gal-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bb-gal-3 .bb-gp:first-child{grid-column:1 / -1}
+.bb-gal-3 .bb-gp:first-child .bb-gp-img{aspect-ratio:1584 / 672}
+.bb-gal-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bb-gp{display:flex;flex-direction:column;gap:14px;min-width:0}
+.bb-gp-fig{position:relative}
+.bb-gp-img{display:block;background-size:cover;background-position:center;border:1px solid #2C2B29;transition:border-color .25s,box-shadow .25s}
+.bb-gp-sq{aspect-ratio:16 / 10}
+.bb-gp-wide{aspect-ratio:1600 / 529}
+.bb-gp:hover .bb-gp-img{border-color:#5A5855}
+.bb-gp:has(input:checked) .bb-gp-img{border-color:#E9D3A0;box-shadow:0 0 22px rgba(242,222,170,.16)}
+.bb-gp .bb-pk-z{top:10px;left:auto;right:10px}
+@media (hover:hover){.bb-gp .bb-pk-z{opacity:0;transition:opacity .2s}.bb-gp:hover .bb-pk-z,.bb-gp .bb-pk-z:focus-visible{opacity:1}}
+.bb-gp-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.bb-gp-txt{display:flex;flex-direction:column;gap:3px;min-width:0}
+.bb-gp-t{font-size:19px;font-weight:600;line-height:1.25}
+.bb-gp-no{font-size:11px;letter-spacing:0.08em;color:#8C8985}
+.bb-like{position:relative;cursor:pointer;flex:none}
+.bb-like input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.bb-like-b{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#A9A6A6;border:1px solid #3A3936;padding:7px 12px;transition:color .2s,border-color .2s,background .2s}
+.bb-like:hover .bb-like-b{color:#F2EDE0;border-color:#8C8985}
+.bb-like input:checked + .bb-like-b{color:#0B0B0B;background:#E9D3A0;border-color:#E9D3A0}
+.bb-like input:focus-visible + .bb-like-b{outline:2px solid #F2EDE0;outline-offset:3px}
+.bb-legend{font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#A9A6A6}
+.bb-fields2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:900px}
+.bb-fields2 .bb-field{max-width:none}
+@media (max-width:980px){.bb-gal-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.bb-gal-2{grid-template-columns:minmax(0,1fr)}.bb-fields2{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.bb-gal-3{grid-template-columns:minmax(0,1fr)}.bb-gal{gap:36px}}
 .bb-form{display:flex;flex-direction:column;gap:30px;max-width:900px}
 .bb-fs{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
 .bb-fs legend{padding:0;margin-bottom:12px;font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#A9A6A6}
@@ -192,16 +226,50 @@ html{scroll-behavior:smooth}
 <section class="bb-wrap bb-ph">
 <h1 class="bb-h bb-pt">gathered in the sound of starlight</h1>
 <div class="bb-dbl" aria-hidden="true"></div>
-<p class="bb-pd">The Formula: engraved plates by brodband, scored by Stellium Scale, to wear, keep and hang. The collection is still taking shape, so tell us what you would like to see first.</p>
-<span class="bb-preview">Preview · not yet for sale</span>
+<p class="bb-pd">Music begins as starlight, gathered into sound. Long before there were songs, there was a single note ringing through the dark, and every song since has followed the same formula: the spark, the shaping, the fire and the release. These engraved plates hold that formula, made to keep, wear and display, so a little of the creative fire can travel with you.</p>
+<span class="bb-preview">Preview · help us choose what we make first</span>
 <div class="bb-plate"><div class="bb-plate-img" role="img" aria-label="Engraving of a glowing golden lyre on a rock, with a stag, wolf, serpent, fox, hare, owls and birds gathered around it under the stars" style="background-image: url(/_blob/2b0af47d69d06122ae6c7ee679cb6a94)"></div></div>
+</section>
+
+<section class="bb-sec" id="plates">
+<div class="bb-wrap" style="padding-block: 72px; display: flex; flex-direction: column; gap: 44px">
+<div class="bb-shead">
+<div class="bb-eye">The plates</div>
+<h2 class="bb-h bb-sh2">the formula, plate by plate</h2>
+<p class="bb-body">Take your time with each engraving. Open any plate to see it in full, and add the ones that speak to you to your picks. Their stories live on the <a href="About.dc.html">Formulated</a> page.</p>
+</div>
+<div class="bb-gal-s">
+<div class="bb-gal-h"><h3 class="bb-h">Series I · The Formula</h3><span class="bb-mono">the creative process, from spark to release</span></div>
+<ul class="bb-gal bb-gal-3">
+<sc-for list="{{seriesOne}}" as="p" hint-placeholder-count="7">
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-sq" style="{{p.bg}}" role="img" aria-label="{{p.title}}"></span><button type="button" class="bb-pk-z" data-zoom-src="{{p.src}}" data-zoom-alt="{{p.title}}" aria-label="View {{p.title}} in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">{{p.title}}</span><span class="bb-mono bb-gp-no">{{p.series}} · {{p.no}}</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="{{p.title}}" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+</sc-for>
+</ul>
+</div>
+<div class="bb-gal-s">
+<div class="bb-gal-h"><h3 class="bb-h">Series II · The Spheres</h3><span class="bb-mono">panoramas of sound and the cosmos</span></div>
+<ul class="bb-gal bb-gal-2">
+<sc-for list="{{seriesTwo}}" as="p" hint-placeholder-count="6">
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="{{p.bg}}" role="img" aria-label="{{p.title}}"></span><button type="button" class="bb-pk-z" data-zoom-src="{{p.src}}" data-zoom-alt="{{p.title}}" aria-label="View {{p.title}} in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">{{p.title}}</span><span class="bb-mono bb-gp-no">{{p.series}} · {{p.no}}</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="{{p.title}}" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+</sc-for>
+</ul>
+</div>
+<div class="bb-gal-s">
+<div class="bb-gal-h"><h3 class="bb-h">Series III · The Gathering</h3><span class="bb-mono">inspiration collected and distilled</span></div>
+<ul class="bb-gal bb-gal-2">
+<sc-for list="{{seriesThree}}" as="p" hint-placeholder-count="3">
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="{{p.bg}}" role="img" aria-label="{{p.title}}"></span><button type="button" class="bb-pk-z" data-zoom-src="{{p.src}}" data-zoom-alt="{{p.title}}" aria-label="View {{p.title}} in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">{{p.title}}</span><span class="bb-mono bb-gp-no">{{p.series}} · {{p.no}}</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="{{p.title}}" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+</sc-for>
+</ul>
+</div>
+</div>
 </section>
 
 <section class="bb-sec">
 <div class="bb-wrap" style="padding-block: 72px; display: flex; flex-direction: column; gap: 36px">
 <div class="bb-shead">
 <div class="bb-eye">The Formula collection</div>
-<h2 class="bb-h bb-sh2">art to wear, keep and hang</h2>
+<h2 class="bb-h bb-sh2">art to keep, wear and display</h2>
 <p class="bb-body">The plates on things made to last. More products follow as we find the right makers.</p>
 </div>
 <ul class="bb-prods">
@@ -232,21 +300,15 @@ html{scroll-behavior:smooth}
 <div class="bb-shead">
 <div class="bb-eye">Your picks</div>
 <h2 class="bb-h bb-sh2">help shape the collection</h2>
-<p class="bb-body">Choose the plates and products you would want. It takes a minute and decides what we make first.</p>
+<p class="bb-body">Tell us which products you would want. Together with the plates you chose above, it decides what we make first.</p>
 </div>
 <sc-if value="{{showForm}}" hint-placeholder-val="{{ true }}">
-<form class="bb-form" name="collected-interest" onSubmit="{{submit}}">
-<fieldset class="bb-fs"><legend>Choose your plates</legend>
-<p class="bb-fine" style="margin-top: -4px">Tap the plates you would most like to own. Their stories live on the <a href="About.dc.html">Formulated</a> page.</p>
-<div class="bb-pick">
-<sc-for list="{{allPlates}}" as="p" hint-placeholder-count="16">
-<label class="bb-pk"><input type="checkbox" name="plate" value="{{p.title}}"><span class="bb-pk-img" style="{{p.bg}}" aria-hidden="true"></span><button type="button" class="bb-pk-z" data-zoom-src="{{p.src}}" data-zoom-alt="{{p.title}}" aria-label="View {{p.title}} in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button><span class="bb-pk-lab"><span class="bb-mono">{{p.series}} · {{p.no}}</span><span class="bb-pk-t">{{p.title}}</span></span></label>
-</sc-for>
-</div></fieldset>
+<form class="bb-form" id="collected-form" name="collected-interest" onSubmit="{{submit}}">
+<div class="bb-fs"><span class="bb-legend">Your plates</span><p class="bb-fine" data-plates-summary>Choose plates in the gallery above with “Add to my picks”.</p></div>
 <fieldset class="bb-fs"><legend>Products you would buy</legend>
 <div class="bb-checks">
 <sc-for list="{{allItems}}" as="it" hint-placeholder-count="23">
-<label class="bb-ck"><input type="checkbox" name="product" value="{{it.name}}"><span>{{it.name}}</span></label>
+<label class="bb-ck"><input type="checkbox" data-pick="product" value="{{it.name}}"><span>{{it.name}}</span></label>
 </sc-for>
 </div></fieldset>
 <fieldset class="bb-fs"><legend>Shirt size (optional)</legend>
@@ -255,7 +317,7 @@ html{scroll-behavior:smooth}
 <label class="bb-sz"><input type="radio" name="size" value="{{z}}"><span>{{z}}</span></label>
 </sc-for>
 </div></fieldset>
-<div class="bb-field"><label for="cl-email">Email (optional)</label><input id="cl-email" name="email" type="email" class="bb-in" autocomplete="email" placeholder="you@example.com"></div>
+<div class="bb-fields2"><div class="bb-field"><label for="cl-name">Name</label><input id="cl-name" name="name" type="text" class="bb-in" autocomplete="name" placeholder="Optional"></div><div class="bb-field"><label for="cl-email">Email</label><input id="cl-email" name="email" type="email" class="bb-in" autocomplete="email" placeholder="Optional, for collection news"></div></div>
 <label class="bb-ck"><input type="checkbox" name="consent" value="yes"><span>Email me when the collection opens. brodband productions will only use your address for collection news, and you can unsubscribe at any time.</span></label>
 <button type="submit" class="bb-b1">Send my picks</button>
 </form>
@@ -285,7 +347,7 @@ class Component extends DCLogic {
   constructor(props) { super(props); this.state = { menuOpen: false, showTop: false, sent: false, view: {} }; if (typeof window !== 'undefined') { try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; if (!location.hash) window.scrollTo(0, 0); } catch (e) {} } var self = this; if (typeof window !== 'undefined') { window.addEventListener('scroll', function () { var de = document.documentElement, y = window.scrollY || de.scrollTop || 0, v = y > 200 && (y + window.innerHeight) >= (de.scrollHeight - 320); if (v !== self.state.showTop) self.setState({ showTop: v }); }, { passive: true }); } }
   renderVals() {
     var self = this, s = this.state;
-    function P(no, title, meaning, id, series, pos) { return { no: no, series: 'Series ' + series, src: '/_blob/' + id, title: title, meaning: meaning, bg: 'background-image: url(/_blob/' + id + '); background-position: ' + (pos || '50% 50%') + (series === 'I' ? '' : '; background-size: 330%') }; }
+    function P(no, title, meaning, id, series, pos) { return { no: no, series: 'Series ' + series, src: '/_blob/' + id, title: title, meaning: meaning, bg: 'background-image: url(/_blob/' + id + ')' }; }
     var seriesOne = [
       P('Plate 0', 'The Ember', 'Every song begins as a spark.', '5abad6c63c2639e46ddbf25a3f85b974', 'I'),
       P('Plate I', 'The Tree', 'A single idea grows into a full arrangement.', '4250c15923301c0c09142fe868c0269d', 'I'),
