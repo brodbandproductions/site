@@ -339,7 +339,7 @@ html{scroll-behavior:smooth}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4400}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { menuOpen: false, filter: 'all', cur: null, playing: false, t: 0, d: 0, err: false, showTop: false }; if (typeof window !== 'undefined') { try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; if (!location.hash) window.scrollTo(0, 0); } catch (e) {} } var self = this; if (typeof window !== 'undefined') { window.addEventListener('scroll', function () { var de = document.documentElement, y = window.scrollY || de.scrollTop || 0, v = y > 200 && (y + window.innerHeight) >= (de.scrollHeight - 320); if (v !== self.state.showTop) self.setState({ showTop: v }); }, { passive: true }); } }
+  constructor(props) { super(props); this.state = { menuOpen: false, filter: 'all', cur: null, playing: false, t: 0, d: 0, err: false, showTop: false }; if (typeof window !== 'undefined') { try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; if (location.hash) history.replaceState(null, '', location.pathname + location.search); window.scrollTo(0, 0); } catch (e) {} } var self = this; if (typeof window !== 'undefined') { window.addEventListener('scroll', function () { var de = document.documentElement, y = window.scrollY || de.scrollTop || 0, v = y > 200 && (y + window.innerHeight) >= (de.scrollHeight - 320); if (v !== self.state.showTop) self.setState({ showTop: v }); }, { passive: true }); } }
   audio() {
     if (this._a) return this._a;
     var self = this, a = new Audio();
