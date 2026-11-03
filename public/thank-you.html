@@ -105,6 +105,11 @@ html{scroll-behavior:smooth}
 .bb-plate{padding:10px;border:1.5px solid #F2EDE0;margin-top:14px;max-width:100%;box-sizing:border-box}
 .bb-plate-img{aspect-ratio:1600 / 529;max-width:100%;background-size:cover;background-position:center}
 @media (max-width:560px){.bb-plate{padding:6px}.bb-plate-img{aspect-ratio:2 / 1}}
+/* consistent page opening: tagline, rule, banner at the same height on every page */
+.bb-ph .bb-pt{max-width:none}
+.bb-ph .bb-plate{margin-top:2px}
+@media (max-width:1180px){.bb-ph .bb-pt{font-size:44px !important}}
+@media (max-width:760px){.bb-ph .bb-pt{font-size:30px !important;line-height:1.15;min-height:2.3em;display:flex;align-items:flex-end}}
 
 /* site build additions */
 .bb-mobile[hidden]{display:none !important}

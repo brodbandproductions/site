@@ -90,8 +90,6 @@ a{color:#F2EDE0}a:hover{color:#FFFFFF}
 .bb-gal-h .bb-mono{font-size:12px;color:#A9A6A6;letter-spacing:0.06em}
 .bb-gal{list-style:none;margin:0;padding:0;display:grid;gap:44px 36px}
 .bb-gal-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.bb-gal-3 .bb-gp:first-child{grid-column:1 / -1}
-.bb-gal-3 .bb-gp:first-child .bb-gp-img{aspect-ratio:1584 / 672}
 .bb-gal-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .bb-gp{display:flex;flex-direction:column;gap:14px;min-width:0}
 .bb-gp-fig{position:relative}
@@ -102,10 +100,11 @@ a{color:#F2EDE0}a:hover{color:#FFFFFF}
 .bb-gp:has(input:checked) .bb-gp-img{border-color:#E9D3A0;box-shadow:0 0 22px rgba(242,222,170,.16)}
 .bb-gp .bb-pk-z{top:10px;left:auto;right:10px}
 @media (hover:hover){.bb-gp .bb-pk-z{opacity:0;transition:opacity .2s}.bb-gp:hover .bb-pk-z,.bb-gp .bb-pk-z:focus-visible{opacity:1}}
-.bb-gp-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.bb-gp-row{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
 .bb-gp-txt{display:flex;flex-direction:column;gap:3px;min-width:0}
 .bb-gp-t{font-size:19px;font-weight:600;line-height:1.25}
-.bb-gp-no{font-size:11px;letter-spacing:0.08em;color:#8C8985}
+.bb-gp-m{font-size:14px;line-height:1.4;color:#A9A6A6;font-style:italic}
+.bb-gal-sep{height:1px;background:#262524;margin-block:6px}
 .bb-like{position:relative;cursor:pointer;flex:none}
 .bb-like input{position:absolute;opacity:0;inset:0;cursor:pointer}
 .bb-like-b{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#A9A6A6;border:1px solid #3A3936;padding:7px 12px;transition:color .2s,border-color .2s,background .2s}
@@ -190,6 +189,11 @@ html{scroll-behavior:smooth}
 .bb-plate{padding:10px;border:1.5px solid #F2EDE0;margin-top:14px;max-width:100%;box-sizing:border-box}
 .bb-plate-img{aspect-ratio:1600 / 529;max-width:100%;background-size:cover;background-position:center}
 @media (max-width:560px){.bb-plate{padding:6px}.bb-plate-img{aspect-ratio:2 / 1}}
+/* consistent page opening: tagline, rule, banner at the same height on every page */
+.bb-ph .bb-pt{max-width:none}
+.bb-ph .bb-plate{margin-top:2px}
+@media (max-width:1180px){.bb-ph .bb-pt{font-size:44px !important}}
+@media (max-width:760px){.bb-ph .bb-pt{font-size:30px !important;line-height:1.15;min-height:2.3em;display:flex;align-items:flex-end}}
 </style>
 </helmet>
 <div id="top" class="bb-tex" style="color: #F2EDE0; font-family: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.6; min-height: 100vh">
@@ -226,42 +230,29 @@ html{scroll-behavior:smooth}
 <section class="bb-wrap bb-ph">
 <h1 class="bb-h bb-pt">gathered in the sound of starlight</h1>
 <div class="bb-dbl" aria-hidden="true"></div>
+<div class="bb-plate"><div class="bb-plate-img" role="img" aria-label="Engraving of a glowing golden lyre on a rock, with a stag, wolf, serpent, fox, hare, owls and birds gathered around it under the stars" style="background-image: url(/_blob/2b0af47d69d06122ae6c7ee679cb6a94)"></div></div>
 <p class="bb-pd">Music begins as starlight, gathered into sound. Long before there were songs, there was a single note ringing through the dark, and every song since has followed the same formula: the spark, the shaping, the fire and the release. These engraved plates hold that formula, made to keep, wear and display, so a little of the creative fire can travel with you.</p>
 <span class="bb-preview">Preview · help us choose what we make first</span>
-<div class="bb-plate"><div class="bb-plate-img" role="img" aria-label="Engraving of a glowing golden lyre on a rock, with a stag, wolf, serpent, fox, hare, owls and birds gathered around it under the stars" style="background-image: url(/_blob/2b0af47d69d06122ae6c7ee679cb6a94)"></div></div>
 </section>
 
 <section class="bb-sec" id="plates">
 <div class="bb-wrap" style="padding-block: 72px; display: flex; flex-direction: column; gap: 44px">
 <div class="bb-shead">
 <div class="bb-eye">The plates</div>
-<h2 class="bb-h bb-sh2">the formula, plate by plate</h2>
+<h2 class="bb-h bb-sh2">the formula</h2>
 <p class="bb-body">Take your time with each engraving. Open any plate to see it in full, and add the ones that speak to you to your picks. Their stories live on the <a href="About.dc.html">Formulated</a> page.</p>
 </div>
-<div class="bb-gal-s">
-<div class="bb-gal-h"><h3 class="bb-h">Series I · The Formula</h3><span class="bb-mono">the creative process, from spark to release</span></div>
+<ul class="bb-gal bb-gal-2">
+<sc-for list="{{widePlates}}" as="p" hint-placeholder-count="10">
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="{{p.bg}}" role="img" aria-label="{{p.title}}"></span><button type="button" class="bb-pk-z" data-zoom-src="{{p.src}}" data-zoom-alt="{{p.title}}" aria-label="View {{p.title}} in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">{{p.title}}</span><span class="bb-gp-m">{{p.meaning}}</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="{{p.title}}" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+</sc-for>
+</ul>
+<div class="bb-gal-sep" aria-hidden="true"></div>
 <ul class="bb-gal bb-gal-3">
-<sc-for list="{{seriesOne}}" as="p" hint-placeholder-count="7">
-<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-sq" style="{{p.bg}}" role="img" aria-label="{{p.title}}"></span><button type="button" class="bb-pk-z" data-zoom-src="{{p.src}}" data-zoom-alt="{{p.title}}" aria-label="View {{p.title}} in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">{{p.title}}</span><span class="bb-mono bb-gp-no">{{p.series}} · {{p.no}}</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="{{p.title}}" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
+<sc-for list="{{squarePlates}}" as="p" hint-placeholder-count="6">
+<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-sq" style="{{p.bg}}" role="img" aria-label="{{p.title}}"></span><button type="button" class="bb-pk-z" data-zoom-src="{{p.src}}" data-zoom-alt="{{p.title}}" aria-label="View {{p.title}} in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">{{p.title}}</span><span class="bb-gp-m">{{p.meaning}}</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="{{p.title}}" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
 </sc-for>
 </ul>
-</div>
-<div class="bb-gal-s">
-<div class="bb-gal-h"><h3 class="bb-h">Series II · The Spheres</h3><span class="bb-mono">panoramas of sound and the cosmos</span></div>
-<ul class="bb-gal bb-gal-2">
-<sc-for list="{{seriesTwo}}" as="p" hint-placeholder-count="6">
-<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="{{p.bg}}" role="img" aria-label="{{p.title}}"></span><button type="button" class="bb-pk-z" data-zoom-src="{{p.src}}" data-zoom-alt="{{p.title}}" aria-label="View {{p.title}} in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">{{p.title}}</span><span class="bb-mono bb-gp-no">{{p.series}} · {{p.no}}</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="{{p.title}}" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
-</sc-for>
-</ul>
-</div>
-<div class="bb-gal-s">
-<div class="bb-gal-h"><h3 class="bb-h">Series III · The Gathering</h3><span class="bb-mono">inspiration collected and distilled</span></div>
-<ul class="bb-gal bb-gal-2">
-<sc-for list="{{seriesThree}}" as="p" hint-placeholder-count="3">
-<li class="bb-gp"><div class="bb-gp-fig"><span class="bb-gp-img bb-gp-wide" style="{{p.bg}}" role="img" aria-label="{{p.title}}"></span><button type="button" class="bb-pk-z" data-zoom-src="{{p.src}}" data-zoom-alt="{{p.title}}" aria-label="View {{p.title}} in full"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8"/></svg></button></div><div class="bb-gp-row"><div class="bb-gp-txt"><span class="bb-gp-t">{{p.title}}</span><span class="bb-mono bb-gp-no">{{p.series}} · {{p.no}}</span></div><label class="bb-like"><input type="checkbox" data-pick="plate" value="{{p.title}}" form="collected-form"><span class="bb-like-b"><span aria-hidden="true">♡</span> Add to my picks</span></label></div></li>
-</sc-for>
-</ul>
-</div>
 </div>
 </section>
 
@@ -342,7 +333,7 @@ html{scroll-behavior:smooth}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5200}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6600}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { menuOpen: false, showTop: false, sent: false, view: {} }; if (typeof window !== 'undefined') { try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; if (!location.hash) window.scrollTo(0, 0); } catch (e) {} } var self = this; if (typeof window !== 'undefined') { window.addEventListener('scroll', function () { var de = document.documentElement, y = window.scrollY || de.scrollTop || 0, v = y > 200 && (y + window.innerHeight) >= (de.scrollHeight - 320); if (v !== self.state.showTop) self.setState({ showTop: v }); }, { passive: true }); } }
   renderVals() {
@@ -401,7 +392,7 @@ class Component extends DCLogic {
       I('Hat', 'brodband beanie', 'The wordmark on a cuffed knit beanie.', 'planned', '312564c9283117c7991730fb3017ddca')
     ];
     return {
-      seriesOne: seriesOne, seriesTwo: seriesTwo, seriesThree: seriesThree, allPlates: seriesOne.concat(seriesTwo, seriesThree),
+      widePlates: [seriesOne[0]].concat(seriesTwo, seriesThree), squarePlates: seriesOne.slice(1), allPlates: [seriesOne[0]].concat(seriesTwo, seriesThree, seriesOne.slice(1)),
       artItems: artItems, brandItems: brandItems, allItems: artItems.concat(brandItems),
       sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'],
       showForm: !s.sent, showThanks: s.sent,
