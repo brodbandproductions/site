@@ -17,6 +17,7 @@ M={
  '5c4fd79d271a7b866b47e02ad02e9e5d':('merch/journal-tree-held.jpg','images/collected/journal-tree-held.jpg'),
  '1bd2c18faca619d3204f6d87e36fefea':('merch/journal-crucible.jpg','images/collected/journal-crucible.jpg'),
  'efcff4e0561451ee81dcc6c2446f08f2':('merch/journal-crucible-held.jpg','images/collected/journal-crucible-held.jpg'),
+ '1da0124206910a99828de2e56399b38a':('merch/journal-open.jpg','images/collected/journal-open.jpg'),
  'bf0890679f673f545f4d76e12dd2992d':('merch/tote-crucible.jpg','images/collected/tote-crucible.jpg'),
  '2ab34f8f187678f240ed1a02b31e2424':('merch/tote-crucible-worn.jpg','images/collected/tote-crucible-worn.jpg'),
  '770b895cf30e3a74b98afd28bc425127':('merch/tote-crucible-flat.jpg','images/collected/tote-crucible-flat.jpg'),
