@@ -22,7 +22,7 @@ PAGES = [
      'Music made, recorded and shared with artists and musicians: live performance, audio recording and video production by brodband productions.', None),
     ('About', 'formulated.html', '/formulated', 'Formulated', 'Formulated · brodband productions',
      'Bring an idea to brodband productions: songwriting and co-writing, full arrangements, recording and production, filmed live sessions and animated music videos.', 'formulated.js'),
-    ('Collected', 'collected.html', '/collected', 'Collected', 'Collected · The Formula collection · brodband productions',
+    ('Collected', 'collected.html', '/collected', 'Collected', 'Collected · Stellium Scale · The Formula · brodband productions',
      'A preview of The Formula: engraved alchemical art plates by brodband, scored by Stellium Scale, on shirts, prints, hats and more. Choose your favourites.', 'collected.js'),
     ('Connect', 'connected.html', '/connected', 'Connected', 'Connected · brodband productions',
      'Get in touch with brodband productions about music projects, songwriting, arrangements, recording and video production.', 'connected.js'),
