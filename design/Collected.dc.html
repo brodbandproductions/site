@@ -248,7 +248,7 @@ html{scroll-behavior:smooth}
 <div class="bb-shead">
 <div class="bb-eye bb-brand">Stellium Scale · Series I</div>
 <h2 class="bb-h bb-sh2">the formula, in sixteen verses</h2>
-<p class="bb-body">Each engraving is one verse of the same story. A spark catches, a fork is struck and the spheres begin to ring. A lantern projects the song into moving pictures, a serpent turns it through endless cycles of time, many streams flow as one river, and one vibration awakens another. Open any engraving to see it in full, and add the ones that speak to you to your picks.</p>
+<p class="bb-body">Each engraving is one verse of the same story. The first tone sets the cosmic symphony in motion, and a spark catches. A lantern projects the song into moving pictures, a serpent turns it through endless cycles of time, many streams flow as one river, and one vibration awakens another. Open any engraving to see it in full, and add the ones that speak to you to your picks.</p>
 </div>
 <ul class="bb-gal bb-gal-2">
 <sc-for list="{{widePlates}}" as="p" hint-placeholder-count="10">
@@ -356,13 +356,13 @@ class Component extends DCLogic {
       P('Plate 0', 'The Ember', 'Every song begins as a spark.', '5abad6c63c2639e46ddbf25a3f85b974', 'I'),
       P('Plate I', 'The Tree', 'A single idea grows into a full arrangement.', '4250c15923301c0c09142fe868c0269d', 'I'),
       P('Plate II', 'The Threads', 'A lyric and a riff braid into one song.', '879c08232bfd3dd8d5ad57b4534787a9', 'I'),
-      P('Plate III', 'The Projection', 'Every song carries a film inside it.', 'bf0e0997b97c6c88e3d843be7d068400', 'I'),
+      P('Plate III', 'The Projection', 'Where sound unfolds into vision.', 'bf0e0997b97c6c88e3d843be7d068400', 'I'),
       P('Plate IV', 'The Lantern', 'Keeping the fire of live music burning.', 'c77ef405268706f9a383613ce30b12d5', 'I'),
       P('Plate V', 'The Crucible', 'Refining a raw musical idea into a finished jewel.', '6575b734ee2267be666cc029a53f75d8', 'I'),
       P('Plate VI', 'The Open Door', 'Every project finds its own path.', '3212aaac7f1d7abeb9f2349c5e4915b8', 'I')
     ];
     var seriesTwo = [
-      P('Plate I', 'Music of the Spheres', 'A struck fork sets the cosmos ringing.', 'b7b69f0dd206f0d6721238ac6af90702', 'II'),
+      P('Plate I', 'Music of the Spheres', 'The first tone of the cosmic symphony.', 'b7b69f0dd206f0d6721238ac6af90702', 'II'),
       P('Plate II', 'The Magic Lantern', 'Music projected into moving pictures.', '3ef19cc19240035629904aae9e5c5ef0', 'II'),
       P('Plate III', 'The Ouroboros', 'Music turning through endless cycles of time.', 'c26a7cfc41851407ba831233280f18d0', 'II'),
       P('Plate IV', 'The Confluence', 'Melodic streams flow as one river.', '9a24aff9ba4de6fb0e7556864287f943', 'II'),
@@ -405,7 +405,7 @@ class Component extends DCLogic {
       I('Hat', 'brodband beanie', 'The wordmark on a cuffed knit beanie.', 'planned', '312564c9283117c7991730fb3017ddca')
     ];
     return {
-      widePlates: [seriesOne[0]].concat(seriesTwo, seriesThree), squarePlates: seriesOne.slice(1), allPlates: [seriesOne[0]].concat(seriesTwo, seriesThree, seriesOne.slice(1)),
+      widePlates: [seriesTwo[0], seriesOne[0]].concat(seriesTwo.slice(1), seriesThree), squarePlates: seriesOne.slice(1), allPlates: [seriesTwo[0], seriesOne[0]].concat(seriesTwo.slice(1), seriesThree, seriesOne.slice(1)),
       artItems: artItems, brandItems: brandItems, allItems: artItems.concat(brandItems),
       surveyGroups: (function () {
         var by = {}; artItems.concat(brandItems).forEach(function (it) { by[it.name] = it; });
