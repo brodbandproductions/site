@@ -202,6 +202,7 @@ def post_collected(p):
                   'Your picks help decide what we make first.')
     p = p.replace('<button type="button" class="bb-b3">Back to the form</button>', '<button type="button" class="bb-b3" data-again>Change my picks</button>')
     p = p.replace('</style>', '.bb-hp{position:absolute;left:-9999px}\nform[hidden]{display:none !important}\n[data-thanks][hidden]{display:none !important}\n</style>', 1)
+    p = p.replace('https://brodbandproductions.com/images/social-share.jpg', 'https://brodbandproductions.com/images/stellium-scale/stellium-scale-share.jpg')
     return p
 
 POST = {'Connect': post_connect, 'Loopers': post_loopers, 'Collected': post_collected}
