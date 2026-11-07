@@ -6,6 +6,7 @@ Source for **brodbandproductions.com**, a plain static site (HTML, CSS and a lit
 
 - `public/` – **the website**. Everything Netlify serves lives here.
   - `images/` – logo, background waves, social share image, opening plates (`plates/`), and one folder per page (`animated/`, `improvised/`, `collaborated/`, `players/`, `formulated/`, `gallery/`)
+  - `images/stellium-scale/` – Stellium Scale brand logos (transparent SVG): horizontal `lockup`, `emblem`, ringed `seal` and `seal-small` (for under ~90 px), each in `-gold` (for black sections) and `-black` (for cream sections), plus `stellium-scale-share.jpg` (1200 × 630 link preview). Full masters (PDF, PNG, cream ink, badge, frame, favicons) are kept outside the repo.
   - `audio/` – Casual Loopers session log takes (`.m4a`, named `YYYY-MM-DD-title.m4a`)
   - `js/site.js` – menu, back-to-top button, click-to-play YouTube, page opens at the top
   - `js/improvised.js` – session log audio player and lineup filter
