@@ -93,6 +93,7 @@ html{scroll-behavior:smooth}
 @media (max-width:560px){.bb-artist{font-size:15px}}
 .bb-ahead{display:flex;flex-direction:column;gap:10px}
 .bb-aname{display:block;font-weight:800;letter-spacing:-0.02em;line-height:1.02}
+.bb-ss-mark{width:.8em;height:auto;vertical-align:-0.06em;margin-right:.22em}
 .bb-stitle{display:block;font-weight:600;letter-spacing:-0.01em;line-height:1.2;color:#E4DFD3}
 .bb-ah-lg .bb-aname{font-size:52px}.bb-ah-lg .bb-stitle{font-size:32px}
 .bb-ah-md .bb-aname{font-size:42px}.bb-ah-md .bb-stitle{font-size:28px}
@@ -169,7 +170,7 @@ html{scroll-behavior:smooth}
 </a>
 <div class="bb-vtext">
 <div class="bb-mono" style="font-size: 13px; color: #A9A6A6">{{v.num}}</div>
-<h2 class="bb-h bb-ahead bb-ah-md"><span class="bb-aname">{{v.artist}}</span><span class="bb-stitle">{{v.title}}</span></h2>
+<h2 class="bb-h bb-ahead bb-ah-md"><span class="bb-aname"><sc-if value="{{v.ss}}"><img class="bb-ss-mark" src="/_blob/286ee0a9969b87aee61c9acd5405ab6d" alt="" aria-hidden="true"></sc-if>{{v.artist}}</span><span class="bb-stitle">{{v.title}}</span></h2>
 <p style="margin: 0; color: #C9C5BC">{{v.desc}}</p>
 <p style="margin: 0; font-size: 14px; color: #8C8985; line-height: 1.5">{{v.credits}}</p>
 <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center"><a href="{{v.url}}" target="_blank" rel="noopener" class="bb-b1">Watch on YouTube ↗</a></div>
@@ -222,7 +223,7 @@ class Component extends DCLogic {
   renderVals() {
     var self = this, s = this.state;
     var list = [["Always", "GK Sessions", "bf798a987b7e96b681ba8edf93862b42", "https://youtu.be/Flu9zKHt-DQ", "An uplifting spiritual song about divine light, faith and grace.", "Alex Brodsky: vocals, guitars, keyboards, piano, synths; writing, production and mix · Glenn Korgaard: drums"], ["Day Dream", "GK Sessions", "63392bb55edd1079aa817e0d52657fb1", "https://youtu.be/drznpJstSjk", "A dreamy, meditative song about lucid daydreaming, mindfulness and expanded consciousness.", "Alex Brodsky: vocals, guitars, keyboards, piano, synths; writing, production and mix · Glenn Korgaard: drums"], ["Move On", "GK Sessions", "4ff7ecb4a72a07639a530c8703d9024d", "https://youtu.be/w34VcjetXDQ", "An inspirational song about overcoming fear and finding hope on the road ahead.", "Alex Brodsky: vocals, guitars, keyboards, piano, synths; writing, production and mix · Glenn Korgaard: drums"], ["Rain", "GK Sessions", "36a2c47c121b043b03587e3d0d56b8cf", "https://youtu.be/UJ8O2pPknD4", "A song of hope about nature's extremes and cycles of renewal, and how deeply humanity depends on them.", "Alex Brodsky: vocals, guitars, keyboards, piano, synths; writing, production and mix · Glenn Korgaard: drums"], ["Steady State", "Stellium Scale", "a5363ea2ff5682d2c31c931aa1b68eff", "https://youtu.be/YWgS60rUyOg", "The physical world taking shape from the constant presence of eternity. The video travels down an endless lattice of light toward the source at its centre.", "Alex Brodsky: vocals, guitars, keyboards, synths, drum programming; writing, production and mix"]];
-    var videos = list.map(function (v, i) { return { url: v[3], num: '0' + (i + 1), title: v[0], artist: v[1], desc: v[4], credits: v[5], bg: 'center / cover no-repeat url(/_blob/' + v[2] + ')' }; });
+    var videos = list.map(function (v, i) { return { url: v[3], num: '0' + (i + 1), title: v[0], artist: v[1], ss: v[1] === 'Stellium Scale', desc: v[4], credits: v[5], bg: 'center / cover no-repeat url(/_blob/' + v[2] + ')' }; });
     return {
       videos: videos,
       menuOpen: s.menuOpen, menuExpanded: s.menuOpen ? 'true' : 'false', menuLabel: s.menuOpen ? 'Close' : 'Menu',

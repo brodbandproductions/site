@@ -17,6 +17,7 @@ M={
  '5c4fd79d271a7b866b47e02ad02e9e5d':('merch/journal-tree-held.jpg','images/collected/journal-tree-held.jpg'),
  '1bd2c18faca619d3204f6d87e36fefea':('merch/journal-crucible.jpg','images/collected/journal-crucible.jpg'),
  'efcff4e0561451ee81dcc6c2446f08f2':('merch/journal-crucible-held.jpg','images/collected/journal-crucible-held.jpg'),
+ '286ee0a9969b87aee61c9acd5405ab6d':('repo/stellium-scale-seal-small-gold.svg','images/stellium-scale/stellium-scale-seal-small-gold.svg'),
  '138fd304f1264d5b7972f0da0ec765e5':('repo/stellium-scale-lockup-gold.svg','images/stellium-scale/stellium-scale-lockup-gold.svg'),
  '7d8bc10a3ccf4e14ba3a139f1f33f21b':('repo/stellium-scale-emblem-gold.svg','images/stellium-scale/stellium-scale-emblem-gold.svg'),
  '1da0124206910a99828de2e56399b38a':('merch/journal-open.jpg','images/collected/journal-open.jpg'),
